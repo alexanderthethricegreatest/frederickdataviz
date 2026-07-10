@@ -1,0 +1,2108 @@
+{
+  "consumes": {
+    "total": 5561,
+    "on_prime_farmland": 669,
+    "on_high_shrink_swell": 743,
+    "in_floodplain": 19,
+    "near_stream_100ft": 137,
+    "in_ag_district": 1,
+    "on_ra_land": 819
+  },
+  "historical": [
+    {
+      "decade": 1900,
+      "homes": 1
+    },
+    {
+      "decade": 1910,
+      "homes": 13
+    },
+    {
+      "decade": 1920,
+      "homes": 17
+    },
+    {
+      "decade": 1930,
+      "homes": 55
+    },
+    {
+      "decade": 1940,
+      "homes": 136
+    },
+    {
+      "decade": 1950,
+      "homes": 311
+    },
+    {
+      "decade": 1960,
+      "homes": 913
+    },
+    {
+      "decade": 1970,
+      "homes": 1953
+    },
+    {
+      "decade": 1980,
+      "homes": 3271
+    },
+    {
+      "decade": 1990,
+      "homes": 3952
+    },
+    {
+      "decade": 2000,
+      "homes": 5216
+    },
+    {
+      "decade": 2010,
+      "homes": 3583
+    },
+    {
+      "decade": 2020,
+      "homes": 2978
+    }
+  ],
+  "densify": [
+    {
+      "year": 2017,
+      "townhouse": 53,
+      "single_family": 320,
+      "modular": 12,
+      "duplex": 2,
+      "total": 387
+    },
+    {
+      "year": 2018,
+      "single_family": 210,
+      "modular": 3,
+      "townhouse": 75,
+      "duplex": 3,
+      "total": 291
+    },
+    {
+      "year": 2019,
+      "modular": 6,
+      "single_family": 435,
+      "townhouse": 111,
+      "total": 552
+    },
+    {
+      "year": 2020,
+      "single_family": 500,
+      "townhouse": 133,
+      "modular": 4,
+      "total": 637
+    },
+    {
+      "year": 2021,
+      "modular": 7,
+      "single_family": 468,
+      "townhouse": 156,
+      "total": 631
+    },
+    {
+      "year": 2022,
+      "single_family": 408,
+      "modular": 6,
+      "townhouse": 188,
+      "total": 602
+    },
+    {
+      "year": 2023,
+      "single_family": 565,
+      "modular": 6,
+      "townhouse": 147,
+      "total": 718
+    },
+    {
+      "year": 2024,
+      "single_family": 538,
+      "townhouse": 275,
+      "modular": 9,
+      "duplex": 4,
+      "total": 826
+    },
+    {
+      "year": 2025,
+      "single_family": 391,
+      "townhouse": 205,
+      "duplex": 52,
+      "modular": 6,
+      "total": 654
+    },
+    {
+      "year": 2026,
+      "single_family": 139,
+      "townhouse": 94,
+      "duplex": 29,
+      "modular": 1,
+      "total": 263
+    }
+  ],
+  "outward": [
+    {
+      "year": 2017,
+      "in": 197,
+      "out": 190
+    },
+    {
+      "year": 2018,
+      "in": 180,
+      "out": 111
+    },
+    {
+      "year": 2019,
+      "in": 300,
+      "out": 252
+    },
+    {
+      "year": 2020,
+      "in": 305,
+      "out": 332
+    },
+    {
+      "year": 2021,
+      "in": 321,
+      "out": 310
+    },
+    {
+      "year": 2022,
+      "in": 234,
+      "out": 368
+    },
+    {
+      "year": 2023,
+      "in": 254,
+      "out": 464
+    },
+    {
+      "year": 2024,
+      "in": 395,
+      "out": 431
+    },
+    {
+      "year": 2025,
+      "in": 411,
+      "out": 243
+    },
+    {
+      "year": 2026,
+      "in": 182,
+      "out": 81
+    }
+  ],
+  "commerce": {
+    "total": 150,
+    "matched": 93,
+    "on_ci_zoned": 68,
+    "linked_to_app": 63,
+    "ci_investment": 444443554,
+    "by_year": [
+      {
+        "year": 2017,
+        "commercial": 4,
+        "industrial": 4,
+        "institutional": 3,
+        "commercial_val": 18210000,
+        "industrial_val": 66213053,
+        "institutional_val": 29078980
+      },
+      {
+        "year": 2018,
+        "commercial": 4,
+        "industrial": 4,
+        "institutional": 7,
+        "commercial_val": 61083714,
+        "industrial_val": 3533878,
+        "institutional_val": 19652000
+      },
+      {
+        "year": 2019,
+        "commercial": 11,
+        "industrial": 4,
+        "institutional": 2,
+        "commercial_val": 4531311,
+        "industrial_val": 15864000,
+        "institutional_val": 1515000
+      },
+      {
+        "year": 2020,
+        "commercial": 10,
+        "industrial": 14,
+        "institutional": 5,
+        "commercial_val": 6390120,
+        "industrial_val": 56608929,
+        "institutional_val": 42318000
+      },
+      {
+        "year": 2021,
+        "commercial": 4,
+        "industrial": 6,
+        "institutional": 3,
+        "commercial_val": 837000,
+        "industrial_val": 43423426,
+        "institutional_val": 2797625
+      },
+      {
+        "year": 2022,
+        "commercial": 7,
+        "industrial": 5,
+        "institutional": 5,
+        "commercial_val": 1585000,
+        "industrial_val": 33241042,
+        "institutional_val": 1422500
+      },
+      {
+        "year": 2023,
+        "commercial": 9,
+        "industrial": 3,
+        "institutional": 4,
+        "commercial_val": 5825780,
+        "industrial_val": 4262000,
+        "institutional_val": 1780784
+      },
+      {
+        "year": 2024,
+        "commercial": 7,
+        "industrial": 5,
+        "institutional": 2,
+        "commercial_val": 85213203,
+        "industrial_val": 11657500,
+        "institutional_val": 1150000
+      },
+      {
+        "year": 2025,
+        "commercial": 6,
+        "industrial": 4,
+        "institutional": 4,
+        "commercial_val": 5835000,
+        "industrial_val": 10060000,
+        "institutional_val": 2203514
+      },
+      {
+        "year": 2026,
+        "commercial": 1,
+        "industrial": 2,
+        "institutional": 1,
+        "commercial_val": 1400000,
+        "industrial_val": 8668598,
+        "institutional_val": 1039700
+      }
+    ],
+    "by_zone": {
+      "B2": 34,
+      "M1": 23,
+      "RA": 15,
+      "RP": 6,
+      "B3": 5,
+      "B1": 2,
+      "M2": 2,
+      "R1": 2,
+      "I2": 1,
+      "R4": 1,
+      "I1": 1,
+      "R5": 1
+    },
+    "consumes": {
+      "total": 93,
+      "on_prime_farmland": 42,
+      "on_high_shrink_swell": 34,
+      "in_floodplain": 0,
+      "near_stream_100ft": 1,
+      "in_ag_district": 0,
+      "on_ra_land": 15
+    }
+  },
+  "serve": {
+    "residential": {
+      "total": 5561,
+      "in_swsa": 3658,
+      "out_swsa": 1903,
+      "pct_out_swsa": 34.2,
+      "med_fire_mi": 2.13,
+      "med_school_mi": 1.05,
+      "by_year": [
+        {
+          "year": 2017,
+          "total": 387,
+          "in_swsa": 267,
+          "out_swsa": 120,
+          "pct_out_swsa": 31.0,
+          "med_fire_mi": 2.37,
+          "med_school_mi": 1.47
+        },
+        {
+          "year": 2018,
+          "total": 291,
+          "in_swsa": 213,
+          "out_swsa": 78,
+          "pct_out_swsa": 26.8,
+          "med_fire_mi": 2.22,
+          "med_school_mi": 0.86
+        },
+        {
+          "year": 2019,
+          "total": 552,
+          "in_swsa": 430,
+          "out_swsa": 122,
+          "pct_out_swsa": 22.1,
+          "med_fire_mi": 2.47,
+          "med_school_mi": 1.02
+        },
+        {
+          "year": 2020,
+          "total": 637,
+          "in_swsa": 434,
+          "out_swsa": 203,
+          "pct_out_swsa": 31.9,
+          "med_fire_mi": 2.56,
+          "med_school_mi": 1.21
+        },
+        {
+          "year": 2021,
+          "total": 631,
+          "in_swsa": 422,
+          "out_swsa": 209,
+          "pct_out_swsa": 33.1,
+          "med_fire_mi": 2.13,
+          "med_school_mi": 1.04
+        },
+        {
+          "year": 2022,
+          "total": 602,
+          "in_swsa": 383,
+          "out_swsa": 219,
+          "pct_out_swsa": 36.4,
+          "med_fire_mi": 2.28,
+          "med_school_mi": 1.0
+        },
+        {
+          "year": 2023,
+          "total": 718,
+          "in_swsa": 355,
+          "out_swsa": 363,
+          "pct_out_swsa": 50.6,
+          "med_fire_mi": 1.0,
+          "med_school_mi": 0.87
+        },
+        {
+          "year": 2024,
+          "total": 826,
+          "in_swsa": 489,
+          "out_swsa": 337,
+          "pct_out_swsa": 40.8,
+          "med_fire_mi": 1.93,
+          "med_school_mi": 1.04
+        },
+        {
+          "year": 2025,
+          "total": 654,
+          "in_swsa": 468,
+          "out_swsa": 186,
+          "pct_out_swsa": 28.4,
+          "med_fire_mi": 2.46,
+          "med_school_mi": 1.22
+        },
+        {
+          "year": 2026,
+          "total": 263,
+          "in_swsa": 197,
+          "out_swsa": 66,
+          "pct_out_swsa": 25.1,
+          "med_fire_mi": 2.45,
+          "med_school_mi": 1.18
+        }
+      ]
+    },
+    "commerce": {
+      "total": 93,
+      "in_swsa": 78,
+      "out_swsa": 15,
+      "pct_out_swsa": 16.1,
+      "med_fire_mi": 1.39,
+      "med_school_mi": 1.04,
+      "by_year": [
+        {
+          "year": 2017,
+          "total": 7,
+          "in_swsa": 7,
+          "out_swsa": 0,
+          "pct_out_swsa": 0.0,
+          "med_fire_mi": 2.4,
+          "med_school_mi": 1.15
+        },
+        {
+          "year": 2018,
+          "total": 11,
+          "in_swsa": 8,
+          "out_swsa": 3,
+          "pct_out_swsa": 27.3,
+          "med_fire_mi": 0.79,
+          "med_school_mi": 0.77
+        },
+        {
+          "year": 2019,
+          "total": 12,
+          "in_swsa": 10,
+          "out_swsa": 2,
+          "pct_out_swsa": 16.7,
+          "med_fire_mi": 1.86,
+          "med_school_mi": 0.59
+        },
+        {
+          "year": 2020,
+          "total": 16,
+          "in_swsa": 16,
+          "out_swsa": 0,
+          "pct_out_swsa": 0.0,
+          "med_fire_mi": 1.59,
+          "med_school_mi": 1.23
+        },
+        {
+          "year": 2021,
+          "total": 7,
+          "in_swsa": 4,
+          "out_swsa": 3,
+          "pct_out_swsa": 42.9,
+          "med_fire_mi": 2.29,
+          "med_school_mi": 1.17
+        },
+        {
+          "year": 2022,
+          "total": 12,
+          "in_swsa": 8,
+          "out_swsa": 4,
+          "pct_out_swsa": 33.3,
+          "med_fire_mi": 1.33,
+          "med_school_mi": 0.93
+        },
+        {
+          "year": 2023,
+          "total": 8,
+          "in_swsa": 7,
+          "out_swsa": 1,
+          "pct_out_swsa": 12.5,
+          "med_fire_mi": 1.15,
+          "med_school_mi": 0.9
+        },
+        {
+          "year": 2024,
+          "total": 8,
+          "in_swsa": 8,
+          "out_swsa": 0,
+          "pct_out_swsa": 0.0,
+          "med_fire_mi": 1.61,
+          "med_school_mi": 1.07
+        },
+        {
+          "year": 2025,
+          "total": 11,
+          "in_swsa": 9,
+          "out_swsa": 2,
+          "pct_out_swsa": 18.2,
+          "med_fire_mi": 0.91,
+          "med_school_mi": 1.43
+        },
+        {
+          "year": 2026,
+          "total": 1,
+          "in_swsa": 1,
+          "out_swsa": 0,
+          "pct_out_swsa": 0.0,
+          "med_fire_mi": 2.38,
+          "med_school_mi": 1.7
+        }
+      ]
+    }
+  },
+  "taxbase": {
+    "snapshot": [
+      {
+        "class": "residential",
+        "parcels": 31574,
+        "acres": 14267,
+        "land_value": 2404887100,
+        "improvement": 8015390733,
+        "total_value": 10420277833,
+        "pct_of_total": 48.3
+      },
+      {
+        "class": "rural_ag",
+        "parcels": 17754,
+        "acres": 221606,
+        "land_value": 2342835700,
+        "improvement": 4615226086,
+        "total_value": 6958061786,
+        "pct_of_total": 32.3
+      },
+      {
+        "class": "commercial_industrial",
+        "parcels": 1737,
+        "acres": 12976,
+        "land_value": 1109950300,
+        "improvement": 2966454687,
+        "total_value": 4076404987,
+        "pct_of_total": 18.9
+      },
+      {
+        "class": "other",
+        "parcels": 19,
+        "acres": 133,
+        "land_value": 9324800,
+        "improvement": 96529359,
+        "total_value": 105854159,
+        "pct_of_total": 0.5
+      }
+    ],
+    "by_build_decade": [
+      {
+        "decade": 1900,
+        "commercial_industrial": 3570096,
+        "other": 0,
+        "residential": 2172280,
+        "rural_ag": 16312874
+      },
+      {
+        "decade": 1910,
+        "commercial_industrial": 4884080,
+        "other": 0,
+        "residential": 5926171,
+        "rural_ag": 30885557
+      },
+      {
+        "decade": 1920,
+        "commercial_industrial": 4104729,
+        "other": 237100,
+        "residential": 29732260,
+        "rural_ag": 49601315
+      },
+      {
+        "decade": 1930,
+        "commercial_industrial": 7259083,
+        "other": 17953,
+        "residential": 15763996,
+        "rural_ag": 54501734
+      },
+      {
+        "decade": 1940,
+        "commercial_industrial": 42258302,
+        "other": 273886,
+        "residential": 23341271,
+        "rural_ag": 74322416
+      },
+      {
+        "decade": 1950,
+        "commercial_industrial": 26185711,
+        "other": 0,
+        "residential": 64984206,
+        "rural_ag": 153237958
+      },
+      {
+        "decade": 1960,
+        "commercial_industrial": 94304152,
+        "other": 0,
+        "residential": 245841089,
+        "rural_ag": 216393303
+      },
+      {
+        "decade": 1970,
+        "commercial_industrial": 164551211,
+        "other": 0,
+        "residential": 510176507,
+        "rural_ag": 478265792
+      },
+      {
+        "decade": 1980,
+        "commercial_industrial": 224617713,
+        "other": 0,
+        "residential": 792094622,
+        "rural_ag": 542805289
+      },
+      {
+        "decade": 1990,
+        "commercial_industrial": 527945049,
+        "other": 0,
+        "residential": 1121656952,
+        "rural_ag": 814715621
+      },
+      {
+        "decade": 2000,
+        "commercial_industrial": 880466146,
+        "other": 0,
+        "residential": 2054985508,
+        "rural_ag": 1085610735
+      },
+      {
+        "decade": 2010,
+        "commercial_industrial": 538398025,
+        "other": 0,
+        "residential": 1488722482,
+        "rural_ag": 455372360
+      },
+      {
+        "decade": 2020,
+        "commercial_industrial": 410169642,
+        "other": 1498316,
+        "residential": 1537131416,
+        "rural_ag": 385247217
+      }
+    ]
+  },
+  "conformance": {
+    "residential": {
+      "total": 5561,
+      "by_plan": {
+        "residential": 3322,
+        "unmapped": 1979,
+        "business": 234,
+        "institutional_rec": 18,
+        "industrial_employment": 4,
+        "rural_other": 4
+      },
+      "on_employment_land": 238
+    },
+    "commerce": {
+      "total": 93,
+      "by_plan": {
+        "business": 36,
+        "industrial_employment": 23,
+        "unmapped": 14,
+        "institutional_rec": 10,
+        "residential": 10
+      },
+      "on_residential_land": 10
+    }
+  },
+  "supply": {
+    "supply_acres": {
+      "commercial_industrial": 11223,
+      "other": 181,
+      "residential": 42094
+    },
+    "ci_zoned_acres": 11223,
+    "vacant_ci_acres": 4637,
+    "vacant_ci_parcels": 433,
+    "datable_polygons": 6091,
+    "zoned_by_year": [
+      {
+        "year": 1989,
+        "residential": 0,
+        "commercial_industrial": 41,
+        "rural_ag": 0,
+        "other": 0
+      },
+      {
+        "year": 1990,
+        "residential": 0,
+        "commercial_industrial": 78,
+        "rural_ag": 0,
+        "other": 0
+      },
+      {
+        "year": 1991,
+        "residential": 46,
+        "commercial_industrial": 0,
+        "rural_ag": 0,
+        "other": 0
+      },
+      {
+        "year": 1992,
+        "residential": 0,
+        "commercial_industrial": 11,
+        "rural_ag": 0,
+        "other": 0
+      },
+      {
+        "year": 1993,
+        "residential": 0,
+        "commercial_industrial": 159,
+        "rural_ag": 0,
+        "other": 0
+      },
+      {
+        "year": 1994,
+        "residential": 22,
+        "commercial_industrial": 20,
+        "rural_ag": 0,
+        "other": 0
+      },
+      {
+        "year": 1995,
+        "residential": 41,
+        "commercial_industrial": 23,
+        "rural_ag": 0,
+        "other": 0
+      },
+      {
+        "year": 1996,
+        "residential": 52,
+        "commercial_industrial": 48,
+        "rural_ag": 0,
+        "other": 0
+      },
+      {
+        "year": 1997,
+        "residential": 14,
+        "commercial_industrial": 1,
+        "rural_ag": 0,
+        "other": 0
+      },
+      {
+        "year": 1998,
+        "residential": 70,
+        "commercial_industrial": 125,
+        "rural_ag": 0,
+        "other": 0
+      },
+      {
+        "year": 1999,
+        "residential": 265,
+        "commercial_industrial": 197,
+        "rural_ag": 0,
+        "other": 0
+      },
+      {
+        "year": 2000,
+        "residential": 0,
+        "commercial_industrial": 151,
+        "rural_ag": 0,
+        "other": 0
+      },
+      {
+        "year": 2001,
+        "residential": 30,
+        "commercial_industrial": 75,
+        "rural_ag": 0,
+        "other": 0
+      },
+      {
+        "year": 2002,
+        "residential": 239,
+        "commercial_industrial": 19,
+        "rural_ag": 0,
+        "other": 0
+      },
+      {
+        "year": 2003,
+        "residential": 1773,
+        "commercial_industrial": 133,
+        "rural_ag": 0,
+        "other": 50
+      },
+      {
+        "year": 2004,
+        "residential": 147,
+        "commercial_industrial": 134,
+        "rural_ag": 0,
+        "other": 0
+      },
+      {
+        "year": 2005,
+        "residential": 231,
+        "commercial_industrial": 164,
+        "rural_ag": 0,
+        "other": 0
+      },
+      {
+        "year": 2006,
+        "residential": 382,
+        "commercial_industrial": 505,
+        "rural_ag": 0,
+        "other": 0
+      },
+      {
+        "year": 2007,
+        "residential": 331,
+        "commercial_industrial": 145,
+        "rural_ag": 0,
+        "other": 0
+      },
+      {
+        "year": 2008,
+        "residential": 15,
+        "commercial_industrial": 535,
+        "rural_ag": 0,
+        "other": 0
+      },
+      {
+        "year": 2009,
+        "residential": 0,
+        "commercial_industrial": 244,
+        "rural_ag": 0,
+        "other": 131
+      },
+      {
+        "year": 2010,
+        "residential": 0,
+        "commercial_industrial": 254,
+        "rural_ag": 0,
+        "other": 0
+      },
+      {
+        "year": 2011,
+        "residential": 0,
+        "commercial_industrial": 44,
+        "rural_ag": 0,
+        "other": 0
+      },
+      {
+        "year": 2012,
+        "residential": 0,
+        "commercial_industrial": 23,
+        "rural_ag": 0,
+        "other": 0
+      },
+      {
+        "year": 2013,
+        "residential": 48,
+        "commercial_industrial": 14,
+        "rural_ag": 0,
+        "other": 0
+      },
+      {
+        "year": 2014,
+        "residential": 0,
+        "commercial_industrial": 1,
+        "rural_ag": 0,
+        "other": 0
+      },
+      {
+        "year": 2015,
+        "residential": 250,
+        "commercial_industrial": 144,
+        "rural_ag": 0,
+        "other": 0
+      },
+      {
+        "year": 2016,
+        "residential": 445,
+        "commercial_industrial": 368,
+        "rural_ag": 0,
+        "other": 0
+      },
+      {
+        "year": 2017,
+        "residential": 0,
+        "commercial_industrial": 130,
+        "rural_ag": 0,
+        "other": 0
+      },
+      {
+        "year": 2018,
+        "residential": 0,
+        "commercial_industrial": 93,
+        "rural_ag": 0,
+        "other": 0
+      },
+      {
+        "year": 2019,
+        "residential": 0,
+        "commercial_industrial": 21,
+        "rural_ag": 0,
+        "other": 0
+      },
+      {
+        "year": 2020,
+        "residential": 0,
+        "commercial_industrial": 52,
+        "rural_ag": 0,
+        "other": 0
+      },
+      {
+        "year": 2021,
+        "residential": 119,
+        "commercial_industrial": 291,
+        "rural_ag": 0,
+        "other": 0
+      },
+      {
+        "year": 2022,
+        "residential": 0,
+        "commercial_industrial": 61,
+        "rural_ag": 0,
+        "other": 0
+      },
+      {
+        "year": 2023,
+        "residential": 0,
+        "commercial_industrial": 402,
+        "rural_ag": 0,
+        "other": 0
+      },
+      {
+        "year": 2024,
+        "residential": 1,
+        "commercial_industrial": 56,
+        "rural_ag": 0,
+        "other": 0
+      },
+      {
+        "year": 2025,
+        "residential": 0,
+        "commercial_industrial": 37,
+        "rural_ag": 0,
+        "other": 0
+      },
+      {
+        "year": 2026,
+        "residential": 149,
+        "commercial_industrial": 2,
+        "rural_ag": 0,
+        "other": 0
+      }
+    ]
+  },
+  "proffers": {
+    "total_points": 697,
+    "rezonings_with_proffers": 245,
+    "by_zone_class": {
+      "commercial_industrial": 324,
+      "unmatched": 185,
+      "residential": 145,
+      "rural_ag": 41,
+      "other": 2
+    },
+    "on_ci_land": 324,
+    "on_residential_land": 145,
+    "linked_to_parsed": 44,
+    "residential_cash_cases": [
+      {
+        "case": "02-24",
+        "year": "2024",
+        "source": "ocr"
+      },
+      {
+        "case": "04-21",
+        "year": "2021",
+        "source": "ocr"
+      },
+      {
+        "case": "07-25",
+        "year": "2025",
+        "source": "ocr"
+      },
+      {
+        "case": "09-22",
+        "year": "2022",
+        "source": "ocr"
+      }
+    ]
+  },
+  "protected": {
+    "conservation_easement_acres": 10284,
+    "conservation_easements": 83,
+    "ag_district_acres": 18702,
+    "ag_district_parcels": 383,
+    "tdr": {
+      "properties": 84,
+      "rights_available": 2028,
+      "rights_severed": 317,
+      "rights_transferred": 54,
+      "eligible_acres": 8146
+    }
+  },
+  "roads": {
+    "miles_by_status": {
+      "Existing": 1.1,
+      "New": 69.3,
+      "Old": 78.3,
+      "Proposed": 7.1
+    },
+    "planned_miles": 76.4,
+    "homes_near_planned": 2529,
+    "ci_near_planned": 35
+  },
+  "interstate": {
+    "overlay_parcels": 53,
+    "ci_permits_in_overlay": 5,
+    "ci_value_in_overlay": 4629311,
+    "homes_in_overlay": 0
+  },
+  "cup": {
+    "total": 91,
+    "by_category": {
+      "commercial": 18,
+      "telecom": 16,
+      "events": 15,
+      "trucking_logistics": 11,
+      "recreation": 9,
+      "solar": 6,
+      "lodging": 4,
+      "industrial": 4,
+      "daycare": 3,
+      "home_business": 2,
+      "agritourism": 2,
+      "other": 1
+    }
+  },
+  "towns": {
+    "incorporated_towns": [
+      "Stephens City",
+      "Middletown"
+    ],
+    "homes_in_towns": 841,
+    "homes_unincorporated": 4720,
+    "pct_in_towns": 15.1
+  },
+  "fire_load": {
+    "by_district": {
+      "STEPHENS CITY": 1944,
+      "CLEAR BROOK": 1092,
+      "GREENWOOD": 931,
+      "MILLWOOD STATION": 372,
+      "MIDDLETOWN": 366,
+      "NORTH MOUNTAIN": 320,
+      "ROUND HILL": 231,
+      "GAINESBORO": 157,
+      "REYNOLDS STORE": 65,
+      "GORE": 57,
+      "STAR TANNERY": 26
+    }
+  },
+  "geology": {
+    "county_karst_acres": 75415,
+    "county_total_acres": 271780,
+    "pct_county_karst": 27.7,
+    "residential": {
+      "total": 5561,
+      "on_karst": 984,
+      "pct_karst": 17.7,
+      "top_karst_formations": {
+        "Edinburg, Lincolnshire, and Ne": 568,
+        "Conococheague": 179,
+        "Pinesburg Station and Rockdale": 107,
+        "Elbrook": 86,
+        "Ridgeley, Keyser, Bloomsburg": 28
+      }
+    },
+    "commerce": {
+      "total": 93,
+      "on_karst": 52,
+      "pct_karst": 55.9,
+      "top_karst_formations": {
+        "Pinesburg Station and Rockdale": 33,
+        "Conococheague": 8,
+        "Edinburg, Lincolnshire, and Ne": 4,
+        "Elbrook": 4,
+        "Stonehenge": 3
+      }
+    }
+  },
+  "owners": {
+    "top_by_parcels": [
+      {
+        "owner": "D R HORTON",
+        "parcels": 526,
+        "acres": 162,
+        "assessed_value": 71656500
+      },
+      {
+        "owner": "LAKE HOLIDAY COUNTRY CLUB",
+        "parcels": 360,
+        "acres": 806,
+        "assessed_value": 8338642
+      },
+      {
+        "owner": "SNOWDEN BRIDGE HOLDINGS",
+        "parcels": 196,
+        "acres": 180,
+        "assessed_value": 16496000
+      },
+      {
+        "owner": "MHC REGENCY LAKES",
+        "parcels": 183,
+        "acres": 0,
+        "assessed_value": 11566000
+      },
+      {
+        "owner": "BROOKFIELD WASHINGTON",
+        "parcels": 112,
+        "acres": 10,
+        "assessed_value": 20841800
+      },
+      {
+        "owner": "VAN METRE AT SNOWDEN BRIDGE",
+        "parcels": 111,
+        "acres": 12,
+        "assessed_value": 21337100
+      },
+      {
+        "owner": "MADISON III",
+        "parcels": 105,
+        "acres": 44,
+        "assessed_value": 89027097
+      },
+      {
+        "owner": "GLOBAL HEADQUARTERS",
+        "parcels": 97,
+        "acres": 48,
+        "assessed_value": 10128300
+      },
+      {
+        "owner": "DSP RB WEST WIND",
+        "parcels": 95,
+        "acres": 4,
+        "assessed_value": 26041300
+      },
+      {
+        "owner": "SHEA",
+        "parcels": 95,
+        "acres": 71,
+        "assessed_value": 22051240
+      },
+      {
+        "owner": "PARAMOUNT",
+        "parcels": 93,
+        "acres": 0,
+        "assessed_value": 374700
+      },
+      {
+        "owner": "CIVIL WAR PRESERVATION TRUST",
+        "parcels": 87,
+        "acres": 64,
+        "assessed_value": 980800
+      },
+      {
+        "owner": "HIGH VIEW ONE",
+        "parcels": 82,
+        "acres": 172,
+        "assessed_value": 1062200
+      },
+      {
+        "owner": "TOWN OF MIDDLETOWN VIRGINIA",
+        "parcels": 78,
+        "acres": 0,
+        "assessed_value": 777500
+      },
+      {
+        "owner": "COMMONWEALTH OF VIRGINIA",
+        "parcels": 73,
+        "acres": 580,
+        "assessed_value": 62874973
+      },
+      {
+        "owner": "OAKCREST PROPERTIES",
+        "parcels": 62,
+        "acres": 3,
+        "assessed_value": 15305600
+      },
+      {
+        "owner": "FREDERICK COUNTY VA",
+        "parcels": 60,
+        "acres": 973,
+        "assessed_value": 64904997
+      },
+      {
+        "owner": "SHENANDOAH HOMEOWNERS ASSOC",
+        "parcels": 60,
+        "acres": 259,
+        "assessed_value": 4251637
+      },
+      {
+        "owner": "HNS",
+        "parcels": 55,
+        "acres": 2,
+        "assessed_value": 1635000
+      },
+      {
+        "owner": "WESTVIEW CUSTOM",
+        "parcels": 52,
+        "acres": 34,
+        "assessed_value": 2118600
+      }
+    ],
+    "top_by_acres": [
+      {
+        "owner": "O N MINERALS CHEMSTONE",
+        "parcels": 51,
+        "acres": 2546,
+        "assessed_value": 30330691
+      },
+      {
+        "owner": "MCDOWELL ALEXANDER W K",
+        "parcels": 9,
+        "acres": 2181,
+        "assessed_value": 5603230
+      },
+      {
+        "owner": "WOODBINE FARMS",
+        "parcels": 16,
+        "acres": 1433,
+        "assessed_value": 17159954
+      },
+      {
+        "owner": "DTS LC",
+        "parcels": 21,
+        "acres": 1323,
+        "assessed_value": 11157378
+      },
+      {
+        "owner": "BHS LC",
+        "parcels": 23,
+        "acres": 1306,
+        "assessed_value": 16661032
+      },
+      {
+        "owner": "PERRY STUART M",
+        "parcels": 27,
+        "acres": 1212,
+        "assessed_value": 18959132
+      },
+      {
+        "owner": "KSS LC",
+        "parcels": 41,
+        "acres": 1174,
+        "assessed_value": 10405287
+      },
+      {
+        "owner": "LONG CREEK FARM",
+        "parcels": 10,
+        "acres": 1087,
+        "assessed_value": 6272746
+      },
+      {
+        "owner": "SHENANDOAH VALLEY BATTLEFIELDS",
+        "parcels": 38,
+        "acres": 1065,
+        "assessed_value": 22960020
+      },
+      {
+        "owner": "VALLEY PROTEINS",
+        "parcels": 16,
+        "acres": 1031,
+        "assessed_value": 4876608
+      },
+      {
+        "owner": "WELLS POLLARD FAMILY PR",
+        "parcels": 2,
+        "acres": 1024,
+        "assessed_value": 1536200
+      },
+      {
+        "owner": "MT FALLS HUNT CLUB",
+        "parcels": 1,
+        "acres": 991,
+        "assessed_value": 1654720
+      },
+      {
+        "owner": "UNITED STATES OF AMERICA",
+        "parcels": 15,
+        "acres": 980,
+        "assessed_value": 44712958
+      },
+      {
+        "owner": "FREDERICK COUNTY VA",
+        "parcels": 60,
+        "acres": 973,
+        "assessed_value": 64904997
+      },
+      {
+        "owner": "GANO TIMOTHY A TRUSTEE",
+        "parcels": 7,
+        "acres": 965,
+        "assessed_value": 2218871
+      },
+      {
+        "owner": "RUSSELL D K & SONS",
+        "parcels": 11,
+        "acres": 894,
+        "assessed_value": 6908512
+      },
+      {
+        "owner": "DESRI BARTONSVILLE LAND HOLDINGS",
+        "parcels": 7,
+        "acres": 863,
+        "assessed_value": 16849100
+      },
+      {
+        "owner": "SHENANDOAH AREA COUNCIL",
+        "parcels": 3,
+        "acres": 828,
+        "assessed_value": 2938677
+      },
+      {
+        "owner": "794HL",
+        "parcels": 7,
+        "acres": 828,
+        "assessed_value": 3737020
+      },
+      {
+        "owner": "LAZY J RANCH",
+        "parcels": 1,
+        "acres": 813,
+        "assessed_value": 1625400
+      }
+    ]
+  },
+  "developers": {
+    "top_builders": [
+      {
+        "name": "RYAN",
+        "units": 906,
+        "pct": 13.6
+      },
+      {
+        "name": "D R HORTON",
+        "units": 850,
+        "pct": 12.7
+      },
+      {
+        "name": "BROOKFIELD MANAGEMENT",
+        "units": 827,
+        "pct": 12.4
+      },
+      {
+        "name": "SHALC",
+        "units": 752,
+        "pct": 11.3
+      },
+      {
+        "name": "RICHMOND AMERICAN",
+        "units": 522,
+        "pct": 7.8
+      },
+      {
+        "name": "DAN RYAN",
+        "units": 452,
+        "pct": 6.8
+      },
+      {
+        "name": "VIRGINIA RESIDENTIAL CONS",
+        "units": 401,
+        "pct": 6.0
+      },
+      {
+        "name": "OWNER",
+        "units": 291,
+        "pct": 4.4
+      },
+      {
+        "name": "LENNAR",
+        "units": 184,
+        "pct": 2.8
+      },
+      {
+        "name": "WESTVIEW CUSTOM",
+        "units": 96,
+        "pct": 1.4
+      },
+      {
+        "name": "IHMW SNOWDEN BRIDGE",
+        "units": 66,
+        "pct": 1.0
+      },
+      {
+        "name": "HEPLER",
+        "units": 66,
+        "pct": 1.0
+      },
+      {
+        "name": "MARONDA OF VA",
+        "units": 62,
+        "pct": 0.9
+      },
+      {
+        "name": "CENTEX",
+        "units": 56,
+        "pct": 0.8
+      },
+      {
+        "name": "SCOTT & SCOTT CONST",
+        "units": 55,
+        "pct": 0.8
+      }
+    ],
+    "top_developers": [
+      {
+        "name": "D R HORTON",
+        "units": 848,
+        "pct": 12.7
+      },
+      {
+        "name": "BROOKFIELD STEPHENSON VILLAGE",
+        "units": 606,
+        "pct": 9.1
+      },
+      {
+        "name": "MREC SHENANDOAH VA",
+        "units": 604,
+        "pct": 9.1
+      },
+      {
+        "name": "RICHMOND AMERICAN OF VA",
+        "units": 508,
+        "pct": 7.6
+      },
+      {
+        "name": "SHEA",
+        "units": 466,
+        "pct": 7.0
+      },
+      {
+        "name": "SNOWDEN BRIDGE HOLDINGS",
+        "units": 280,
+        "pct": 4.2
+      },
+      {
+        "name": "THE VILLAGE AT MIDDLETOWN LC",
+        "units": 193,
+        "pct": 2.9
+      },
+      {
+        "name": "FREEDOM MANOR",
+        "units": 169,
+        "pct": 2.5
+      },
+      {
+        "name": "ARCADIA COMMUNITIES",
+        "units": 153,
+        "pct": 2.3
+      },
+      {
+        "name": "US",
+        "units": 150,
+        "pct": 2.2
+      },
+      {
+        "name": "BROOKFIELD STEPHENSON",
+        "units": 138,
+        "pct": 2.1
+      },
+      {
+        "name": "WINCHESTER LANDING",
+        "units": 121,
+        "pct": 1.8
+      },
+      {
+        "name": "WESTVIEW CUSTOM",
+        "units": 108,
+        "pct": 1.6
+      },
+      {
+        "name": "JENNINGS INVESTMENTS",
+        "units": 104,
+        "pct": 1.6
+      },
+      {
+        "name": "SHAWNEE VILLAGE LC",
+        "units": 89,
+        "pct": 1.3
+      }
+    ],
+    "by_year": [
+      {
+        "year": 2017,
+        "total": 598,
+        "leaders": [
+          {
+            "name": "DAN RYAN",
+            "units": 87
+          },
+          {
+            "name": "SHALC",
+            "units": 79
+          },
+          {
+            "name": "RYAN",
+            "units": 73
+          }
+        ]
+      },
+      {
+        "year": 2018,
+        "total": 687,
+        "leaders": [
+          {
+            "name": "RYAN",
+            "units": 137
+          },
+          {
+            "name": "SHALC",
+            "units": 94
+          },
+          {
+            "name": "BROOKFIELD MANAGEMENT",
+            "units": 78
+          }
+        ]
+      },
+      {
+        "year": 2019,
+        "total": 667,
+        "leaders": [
+          {
+            "name": "RYAN",
+            "units": 179
+          },
+          {
+            "name": "SHALC",
+            "units": 97
+          },
+          {
+            "name": "DAN RYAN",
+            "units": 92
+          }
+        ]
+      },
+      {
+        "year": 2020,
+        "total": 676,
+        "leaders": [
+          {
+            "name": "RYAN",
+            "units": 137
+          },
+          {
+            "name": "DAN RYAN",
+            "units": 106
+          },
+          {
+            "name": "SHALC",
+            "units": 86
+          }
+        ]
+      },
+      {
+        "year": 2021,
+        "total": 680,
+        "leaders": [
+          {
+            "name": "BROOKFIELD MANAGEMENT",
+            "units": 124
+          },
+          {
+            "name": "SHALC",
+            "units": 103
+          },
+          {
+            "name": "DAN RYAN",
+            "units": 87
+          }
+        ]
+      },
+      {
+        "year": 2022,
+        "total": 648,
+        "leaders": [
+          {
+            "name": "RYAN",
+            "units": 94
+          },
+          {
+            "name": "BROOKFIELD MANAGEMENT",
+            "units": 87
+          },
+          {
+            "name": "SHALC",
+            "units": 82
+          }
+        ]
+      },
+      {
+        "year": 2023,
+        "total": 798,
+        "leaders": [
+          {
+            "name": "D R HORTON",
+            "units": 213
+          },
+          {
+            "name": "RYAN",
+            "units": 135
+          },
+          {
+            "name": "RICHMOND AMERICAN",
+            "units": 100
+          }
+        ]
+      },
+      {
+        "year": 2024,
+        "total": 865,
+        "leaders": [
+          {
+            "name": "D R HORTON",
+            "units": 284
+          },
+          {
+            "name": "RICHMOND AMERICAN",
+            "units": 102
+          },
+          {
+            "name": "BROOKFIELD MANAGEMENT",
+            "units": 98
+          }
+        ]
+      },
+      {
+        "year": 2025,
+        "total": 700,
+        "leaders": [
+          {
+            "name": "D R HORTON",
+            "units": 233
+          },
+          {
+            "name": "BROOKFIELD MANAGEMENT",
+            "units": 137
+          },
+          {
+            "name": "VIRGINIA RESIDENTIAL CONS",
+            "units": 92
+          }
+        ]
+      },
+      {
+        "year": 2026,
+        "total": 355,
+        "leaders": [
+          {
+            "name": "D R HORTON",
+            "units": 92
+          },
+          {
+            "name": "BROOKFIELD MANAGEMENT",
+            "units": 80
+          },
+          {
+            "name": "LENNAR",
+            "units": 34
+          }
+        ]
+      }
+    ]
+  },
+  "engineers": [
+    {
+      "firm": "GREENWAY ENGINEERING INC",
+      "cases": 129,
+      "acres": 4997.566999999999
+    },
+    {
+      "firm": "PENNONI ASSOCIATES INC",
+      "cases": 69,
+      "acres": 4274.199999999999
+    },
+    {
+      "firm": "PAINTER-LEWIS, PLC",
+      "cases": 60,
+      "acres": 1551.1599999999996
+    },
+    {
+      "firm": "GREYWOLFE INC",
+      "cases": 39,
+      "acres": 589.21
+    },
+    {
+      "firm": "DICE ENGINEERING, PLC",
+      "cases": 26,
+      "acres": 571.18
+    },
+    {
+      "firm": "STOWE ENGINEERING PLC",
+      "cases": 25,
+      "acres": 1533.1799999999996
+    },
+    {
+      "firm": "KIMLEY-HORN AND ASSOCIATES",
+      "cases": 14,
+      "acres": 1544.27
+    },
+    {
+      "firm": "BOHLER",
+      "cases": 14,
+      "acres": 290.40099999999995
+    },
+    {
+      "firm": "MICHAEL ARTZ",
+      "cases": 13,
+      "acres": 19.61
+    },
+    {
+      "firm": "STOWE ENGINEERING",
+      "cases": 12,
+      "acres": 1305.15
+    },
+    {
+      "firm": "POTESTA",
+      "cases": 11,
+      "acres": 228.48999999999998
+    },
+    {
+      "firm": "MICHAEL M ARTZ",
+      "cases": 10,
+      "acres": 63.57
+    },
+    {
+      "firm": "GORDON",
+      "cases": 9,
+      "acres": 429.38000000000005
+    },
+    {
+      "firm": "MONTEVERDE",
+      "cases": 9,
+      "acres": 18.7299
+    },
+    {
+      "firm": "URBAN, LTD",
+      "cases": 9,
+      "acres": 102.87
+    }
+  ],
+  "applications": {
+    "total": 885,
+    "approved": 714,
+    "denied": 51,
+    "pending": 120,
+    "total_acres": 38534,
+    "median_approval_months": 2.1,
+    "caveats": {
+      "rezoning_lag": "Rezoning median (2.2 mo) reflects recorded SUBMT_DT->APRV_DT (complete-application-to-hearing), NOT the full Planning Commission + Board of Supervisors legislative timeline; the relative ordering across casetypes is reliable, the rezoning absolute understates reality.",
+      "partial_2026": "2026 filed/approved counts are year-to-date (through the snapshot date) and will read artificially low \u2014 don't plot as a decline."
+    },
+    "by_filed_year": [
+      {
+        "year": 2017,
+        "filed": 83,
+        "approved": 73,
+        "acres": 3875,
+        "by_type": {
+          "Appeal": 1,
+          "Comp Plan Amendment": 1,
+          "Conditional Use Permit": 9,
+          "Master Development Plan": 6,
+          "Rezoning": 6,
+          "Site Plan": 47,
+          "Subdivision": 8,
+          "Variance": 5
+        }
+      },
+      {
+        "year": 2018,
+        "filed": 87,
+        "approved": 74,
+        "acres": 3458,
+        "by_type": {
+          "Appeal": 2,
+          "Comp Plan Amendment": 3,
+          "Conditional Use Permit": 11,
+          "Master Development Plan": 6,
+          "Rezoning": 4,
+          "Site Plan": 47,
+          "Subdivision": 4,
+          "Variance": 10
+        }
+      },
+      {
+        "year": 2019,
+        "filed": 79,
+        "approved": 69,
+        "acres": 1997,
+        "by_type": {
+          "Comp Plan Amendment": 2,
+          "Conditional Use Permit": 8,
+          "Master Development Plan": 3,
+          "Rezoning": 7,
+          "Site Plan": 49,
+          "Subdivision": 2,
+          "Variance": 8
+        }
+      },
+      {
+        "year": 2020,
+        "filed": 79,
+        "approved": 73,
+        "acres": 4464,
+        "by_type": {
+          "Appeal": 3,
+          "Comp Plan Amendment": 1,
+          "Conditional Use Permit": 10,
+          "Master Development Plan": 5,
+          "Rezoning": 2,
+          "Site Plan": 45,
+          "Subdivision": 4,
+          "Variance": 9
+        }
+      },
+      {
+        "year": 2021,
+        "filed": 68,
+        "approved": 61,
+        "acres": 2753,
+        "by_type": {
+          "Comp Plan Amendment": 1,
+          "Conditional Use Permit": 14,
+          "Master Development Plan": 5,
+          "Rezoning": 5,
+          "Site Plan": 31,
+          "Subdivision": 3,
+          "Variance": 9
+        }
+      },
+      {
+        "year": 2022,
+        "filed": 118,
+        "approved": 95,
+        "acres": 6620,
+        "by_type": {
+          "Appeal": 5,
+          "Conditional Use Permit": 13,
+          "Master Development Plan": 6,
+          "Rezoning": 10,
+          "Site Plan": 68,
+          "Subdivision": 7,
+          "Variance": 9
+        }
+      },
+      {
+        "year": 2023,
+        "filed": 103,
+        "approved": 87,
+        "acres": 5747,
+        "by_type": {
+          "Appeal": 4,
+          "Comp Plan Amendment": 6,
+          "Conditional Use Permit": 11,
+          "Master Development Plan": 2,
+          "Rezoning": 6,
+          "Site Plan": 59,
+          "Subdivision": 5,
+          "Variance": 9,
+          "Waiver": 1
+        }
+      },
+      {
+        "year": 2024,
+        "filed": 102,
+        "approved": 78,
+        "acres": 3955,
+        "by_type": {
+          "Appeal": 5,
+          "Comp Plan Amendment": 1,
+          "Conditional Use Permit": 7,
+          "Master Development Plan": 3,
+          "Rezoning": 11,
+          "Site Plan": 42,
+          "Subdivision": 6,
+          "Variance": 25,
+          "Waiver": 2
+        }
+      },
+      {
+        "year": 2025,
+        "filed": 113,
+        "approved": 83,
+        "acres": 3963,
+        "by_type": {
+          "Appeal": 2,
+          "Conditional Use Permit": 5,
+          "Master Development Plan": 9,
+          "Rezoning": 8,
+          "Site Plan": 56,
+          "Subdivision": 6,
+          "Variance": 24,
+          "Waiver": 3
+        }
+      },
+      {
+        "year": 2026,
+        "filed": 53,
+        "approved": 21,
+        "acres": 1702,
+        "by_type": {
+          "Appeal": 2,
+          "Conditional Use Permit": 3,
+          "Master Development Plan": 2,
+          "Rezoning": 6,
+          "Site Plan": 23,
+          "Subdivision": 5,
+          "Variance": 12
+        }
+      }
+    ],
+    "by_approved_year": [
+      {
+        "year": 2017,
+        "approved": 54,
+        "acres": 2516
+      },
+      {
+        "year": 2018,
+        "approved": 71,
+        "acres": 2489
+      },
+      {
+        "year": 2019,
+        "approved": 73,
+        "acres": 2284
+      },
+      {
+        "year": 2020,
+        "approved": 74,
+        "acres": 4021
+      },
+      {
+        "year": 2021,
+        "approved": 55,
+        "acres": 1515
+      },
+      {
+        "year": 2022,
+        "approved": 82,
+        "acres": 5071
+      },
+      {
+        "year": 2023,
+        "approved": 79,
+        "acres": 4944
+      },
+      {
+        "year": 2024,
+        "approved": 97,
+        "acres": 4429
+      },
+      {
+        "year": 2025,
+        "approved": 80,
+        "acres": 2380
+      },
+      {
+        "year": 2026,
+        "approved": 44,
+        "acres": 1921
+      }
+    ],
+    "by_type": [
+      {
+        "casetype": "Site Plan",
+        "applications": 467,
+        "approved": 406,
+        "approval_rate": 100.0,
+        "median_approval_months": 2.5,
+        "acres": 18833
+      },
+      {
+        "casetype": "Variance",
+        "applications": 120,
+        "approved": 105,
+        "approval_rate": 94.6,
+        "median_approval_months": 0.9,
+        "acres": 525
+      },
+      {
+        "casetype": "Conditional Use Permit",
+        "applications": 91,
+        "approved": 59,
+        "approval_rate": 77.6,
+        "median_approval_months": 2.1,
+        "acres": 6389
+      },
+      {
+        "casetype": "Rezoning",
+        "applications": 65,
+        "approved": 48,
+        "approval_rate": 84.2,
+        "median_approval_months": 2.2,
+        "acres": 4067
+      },
+      {
+        "casetype": "Subdivision",
+        "applications": 50,
+        "approved": 42,
+        "approval_rate": 97.7,
+        "median_approval_months": 9.0,
+        "acres": 2439
+      },
+      {
+        "casetype": "Master Development Plan",
+        "applications": 47,
+        "approved": 43,
+        "approval_rate": 100.0,
+        "median_approval_months": 2.1,
+        "acres": 2670
+      },
+      {
+        "casetype": "Appeal",
+        "applications": 24,
+        "approved": 2,
+        "approval_rate": 15.4,
+        "median_approval_months": 14.5,
+        "acres": 509
+      },
+      {
+        "casetype": "Comp Plan Amendment",
+        "applications": 15,
+        "approved": 5,
+        "approval_rate": 41.7,
+        "median_approval_months": 7.3,
+        "acres": 2721
+      },
+      {
+        "casetype": "Waiver",
+        "applications": 6,
+        "approved": 4,
+        "approval_rate": 100.0,
+        "median_approval_months": 1.9,
+        "acres": 381
+      }
+    ]
+  },
+  "value": [
+    {
+      "district": "Back Creek",
+      "parcels": 12361,
+      "land_value": 1256327200,
+      "total_value": 3902981395,
+      "improvement": 2646654195
+    },
+    {
+      "district": "Gainesboro",
+      "parcels": 9935,
+      "land_value": 1217674700,
+      "total_value": 3944409394,
+      "improvement": 2726734694
+    },
+    {
+      "district": "Middletown",
+      "parcels": 851,
+      "land_value": 78916400,
+      "total_value": 295382251,
+      "improvement": 216465851
+    },
+    {
+      "district": "Opequon",
+      "parcels": 6509,
+      "land_value": 726957200,
+      "total_value": 2926295351,
+      "improvement": 2199338151
+    },
+    {
+      "district": "Red Bud",
+      "parcels": 6535,
+      "land_value": 641116500,
+      "total_value": 2659098920,
+      "improvement": 2017982420
+    },
+    {
+      "district": "Shawnee",
+      "parcels": 6693,
+      "land_value": 832665500,
+      "total_value": 3539668092,
+      "improvement": 2707002592
+    },
+    {
+      "district": "Stephens City",
+      "parcels": 1601,
+      "land_value": 144499300,
+      "total_value": 525099310,
+      "improvement": 380600010
+    },
+    {
+      "district": "Stonewall",
+      "parcels": 6599,
+      "land_value": 968841100,
+      "total_value": 3767664052,
+      "improvement": 2798822952
+    }
+  ]
+}

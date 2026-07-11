@@ -23,7 +23,7 @@ export default function ApplicationsPage() {
   return (
     <main className="wrap">
       <section className="blk">
-        <h2>The application pipeline</h2>
+        <h2>The approval process</h2>
         <div className="sub">How much comes before the planning bodies each year, what it is, and how it fares.</div>
         <div className="statstrip" style={{ marginTop: 0, marginBottom: 20 }}>
           <div className="s"><div className="v">{fmtI(ap.total)}</div><div className="l">Applications, 2017–2026</div></div>
@@ -43,7 +43,7 @@ export default function ApplicationsPage() {
               rows={fy.map((r: any, i: number) => [r.year, ...keys.map((k) => series.find((s) => s.label === k)!.values[i]), r.filed])} />
           </Card>
 
-          <Card title="Filed vs. approved, and land under application" desc="Approvals track filings closely — most cases clear."
+          <Card title="Filed vs. approved, and land under application" desc="Approvals track filings closely; most cases clear."
             foot="Acres under application swing with a few large rezonings/site plans each year.">
             <Legend series={[{ label: "Filed", color: SERIES[0] }, { label: "Approved", color: SERIES[1] }]} />
             <Line cats={fy.map((r: any) => r.year)}
@@ -53,7 +53,7 @@ export default function ApplicationsPage() {
               rows={fy.map((r: any) => [r.year, r.filed, r.approved, fmtI(r.acres)])} />
           </Card>
 
-          <Card title="By case type — how each track behaves" desc="Volume, approval rate, and how long each type takes to decide." wide
+          <Card title="By case type: how each track behaves" desc="Volume, approval rate, and how long each type takes to decide." wide
             foot="Appeals are slow and mostly denied; Comp Plan Amendments are the hardest to win. Rezoning's recorded span understates its true legislative timeline.">
             <Bars cats={ap.by_type.map((t: any) => t.casetype.length > 12 ? t.casetype.split(" ").map((w: string) => w[0]).join("") : t.casetype)}
               fmt="int" series={[{ label: "Applications", color: SERIES[0], values: ap.by_type.map((t: any) => t.applications) }]} />
@@ -65,7 +65,7 @@ export default function ApplicationsPage() {
 
       <section className="blk" style={{ paddingTop: 8 }}>
         <h2>Browse every application</h2>
-        <div className="sub">All {meta.count.toLocaleString()} cases. Search, filter, sort — click any row for its full pipeline.</div>
+        <div className="sub">All {meta.count.toLocaleString()} cases. Search, filter, sort, then click any row for its full approval history.</div>
         <LibraryBrowser apps={apps} meta={meta} />
       </section>
     </main>

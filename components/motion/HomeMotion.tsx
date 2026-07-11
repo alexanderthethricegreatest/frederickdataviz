@@ -29,12 +29,6 @@ export default function HomeMotion({ children }: { children: ReactNode }) {
       tl.from(".hero p", { y: 18, autoAlpha: 0, duration: 0.7 }, 0.5)
         .from(".hero .cta > *", { y: 14, autoAlpha: 0, duration: 0.6, stagger: 0.09 }, 0.65);
 
-      // --- Mesh parallax (drift the background as you scroll) ---
-      gsap.to(document.documentElement, {
-        "--mesh-y": "120px", ease: "none",
-        scrollTrigger: { trigger: root, start: "top top", end: "bottom top", scrub: true },
-      });
-
       // --- Hero content parallaxes up + fades as it leaves ---
       gsap.to(".hero .wrap", {
         y: -70, autoAlpha: 0.35, ease: "none",

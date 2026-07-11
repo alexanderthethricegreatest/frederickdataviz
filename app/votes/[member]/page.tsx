@@ -74,7 +74,7 @@ export default async function Member({ params }: { params: Promise<{ member: str
           <div>
             <Card title="Dissenting votes"
               desc={m.dissents.length ? `The ${m.dissents.length} recorded ${m.dissents.length > 1 ? "votes" : "vote"} cast against the majority.` : undefined}
-              foot={m.dissents.length ? undefined : "No recorded dissents — voted with the majority on every roll call."}>
+              foot={m.dissents.length ? undefined : "No recorded dissents; voted with the majority on every roll call."}>
               {m.dissents.length > 0 && (
                 <div className="recusal-list">
                   {m.dissents.map((d: any, i: number) => (
@@ -118,7 +118,7 @@ export default async function Member({ params }: { params: Promise<{ member: str
 
             {partners.length > 0 && (
               <div className="mt-sec">
-                <Card title="Voting alignment" desc="Of members who sat together often — share of shared roll-calls they landed on the same side.">
+                <Card title="Voting alignment" desc="Of members who sat together often, the share of shared roll-calls they landed on the same side.">
                   <div className="align-grp"><div className="align-h">Most aligned</div>
                     {allies.map((p: any) => (
                       <div key={p.name} className="align-row"><span>{p.name}</span><span className="align-v" style={{ color: "var(--good)" }}>{pct(p.agree)}</span></div>

@@ -2,7 +2,7 @@ import { atlas, SERIES, fmtI, fmtM, pctS, fmtAc } from "@/lib/data";
 import { Bars, Line, HBar, Stacked100, Legend } from "@/components/Charts";
 import { PageHead, Card, MiniTable } from "@/components/Kit";
 
-export const metadata = { title: "Where growth lands · Growth Atlas" };
+export const metadata = { title: "Where growth gets built · Growth Atlas" };
 const RES = SERIES[0], CI = SERIES[7], VIO = SERIES[4], YEL = SERIES[2], MUT = "var(--muted)";
 const p1 = (n: number, d: number) => +(n / (d || 1) * 100).toFixed(1);
 
@@ -29,22 +29,24 @@ export default function Land() {
 
   return (
     <>
-      <PageHead eyebrow="Where growth lands" title="On the valley floor: farmland, karst, and beyond the pipes."
+      <PageHead eyebrow="Where growth gets built" title="On the valley floor: farmland, karst, and outside the service area."
         stats={[
           { v: pctS(se.pct_out_swsa), l: "New homes outside sewer/water", cls: "crit" },
           { v: pctS(g.commerce.pct_karst), l: "C/I built on karst", cls: "crit" },
           { v: fmtI(a.roads.homes_near_planned), l: "Homes on unbuilt road corridors" },
           { v: fmtAc(a.protected.conservation_easement_acres + a.protected.ag_district_acres), l: "Protected / ag-district land" },
         ]}>
-        New development concentrates on the flat, well-drained valley floor near I-81 — which is also
+        New development concentrates on the flat, well-drained valley floor near I-81, which is also
         the county’s prime farmland and its soluble limestone karst. Much of it lands beyond the sewer
         and water service area, and ahead of the roads meant to serve it.
       </PageHead>
 
       <main className="wrap">
         <section className="blk">
+          <h2>What growth is built on</h2>
+          <div className="sub">The physical ground new development is built on, and how residential and commercial builders choose it differently.</div>
           <div className="grid g-2">
-            <Card title="What growth is built on" desc="Share of matched permits on each land type — residential vs commercial/industrial."
+            <Card title="What growth is built on" desc="Share of matched permits on each land type, residential vs commercial/industrial."
               foot="C/I sits on prime farmland and karst at ~2× the residential rate: flat, dry, near the interstate.">
               <Legend series={[{ label: "Residential", color: RES }, { label: "Commercial/Industrial", color: CI }]} />
               <Bars cats={cats} mode="group" fmt="pct"
@@ -52,7 +54,7 @@ export default function Land() {
               <MiniTable cols={["Land type", "Residential", "C/I"]} rows={cats.map((c, i) => [c, pctS(resV[i]), pctS(ciV[i])])} />
             </Card>
 
-            <Card title="Growth on karst bedrock" desc="Carbonate limestone/dolomite — sinkhole, collapse & groundwater risk."
+            <Card title="Growth on karst bedrock" desc="Carbonate limestone/dolomite: sinkhole, collapse & groundwater risk."
               foot="Karst is a bedrock-lithology proxy; no mapped-sinkhole layer exists. C/I is 2× over-represented.">
               <Bars cats={["County baseline", "Residential", "Commercial/Ind."]} fmt="pct"
                 series={[{ label: "On karst", color: YEL, values: [g.pct_county_karst, g.residential.pct_karst, g.commerce.pct_karst] }]} />
@@ -61,8 +63,14 @@ export default function Land() {
                 ["Residential permits", pctS(g.residential.pct_karst), `${g.residential.on_karst} of ${g.residential.total}`],
                 ["C/I permits", pctS(g.commerce.pct_karst), `${g.commerce.on_karst} of ${g.commerce.total}`]]} />
             </Card>
+          </div>
+        </section>
 
-            <Card title="Cost to serve — homes beyond the pipes" desc="Share of new homes built outside the sewer & water service area, per year."
+        <section className="blk">
+          <h2>The cost of serving it</h2>
+          <div className="sub">How far new homes get built ahead of the service area, the plan, and the services meant to reach them.</div>
+          <div className="grid g-2">
+            <Card wide title="Cost to serve: homes outside the service area" desc="Share of new homes built outside the sewer & water service area, per year."
               foot={`Median new home: ${se.med_fire_mi} mi to a fire station, ${se.med_school_mi} mi to a school.`}>
               <Line cats={se.by_year.map((r: any) => r.year)} fmt="pct"
                 series={[{ label: "% outside SWSA", color: VIO, values: se.by_year.map((r: any) => r.pct_out_swsa) }]} />
@@ -70,29 +78,8 @@ export default function Land() {
                 rows={se.by_year.map((r: any) => [r.year, r.total, pctS(r.pct_out_swsa), r.med_fire_mi, r.med_school_mi])} />
             </Card>
 
-            <Card title="Realized homes vs. the long-range plan" desc="Where new homes fell relative to the plan's designated use."
-              foot={`${a.conformance.residential.on_employment_land} homes landed on land the plan reserves for business or industry; ~36% built outside the mapped growth area entirely.`}>
-              <HBar items={planItems} />
-              <MiniTable cols={["Plan designation", "New homes"]} rows={planItems.map((i) => [i.label, fmtI(i.value)])} />
-            </Card>
-
-            <Card title="Land locked from development" desc="Protected acreage — and the dormant growth-management tool.">
-              <MiniTable open cols={["Program", "Amount", "Detail"]} rows={[
-                ["Conservation easements", fmtAc(a.protected.conservation_easement_acres), `${a.protected.conservation_easements} easements`],
-                ["Agricultural districts", fmtAc(a.protected.ag_district_acres), `${a.protected.ag_district_parcels} parcels`],
-                ["TDR rights available", fmtI(tdr.rights_available), `${fmtAc(tdr.eligible_acres)} eligible`],
-                ["TDR rights transferred", fmtI(tdr.rights_transferred), `${Math.round(tdr.rights_transferred / tdr.rights_available * 100)}% used — dormant`]]} />
-            </Card>
-
-            <Card title="Roads owed to growth & the I-81 corridor" desc="Planned-but-unbuilt road network, and the interstate commercial overlay.">
-              <MiniTable open cols={["Road plan status", "Miles"]} rows={Object.entries(ms).map(([k, v]: any) => [k, v])} />
-              <div className="foot">
-                {fmtI(a.roads.homes_near_planned)} new homes sit within ¼-mile of a planned corridor ({a.roads.planned_miles} mi planned). The I-81 overlay ({a.interstate.overlay_parcels} parcels) is C/I-only — {a.interstate.ci_permits_in_overlay} C/I permits ({fmtM(a.interstate.ci_value_in_overlay)}), {a.interstate.homes_in_overlay} homes.
-              </div>
-            </Card>
-
-            <Card title="Sprawl — inside vs. outside the growth area" desc="Realized dwellings built inside the Urban Development Area vs. beyond it, per year."
-              foot="Roughly half of new homes are built outside the UDA — the pattern the comprehensive plan was meant to prevent.">
+            <Card title="Sprawl: inside vs. outside the growth area" desc="Realized dwellings built inside the Urban Development Area vs. beyond it, per year."
+              foot="Roughly half of new homes are built outside the UDA, the pattern the comprehensive plan was meant to prevent.">
               <Legend series={[{ label: "Inside UDA", color: SERIES[1] }, { label: "Outside UDA", color: SERIES[7] }]} />
               <Bars cats={a.outward.map((r: any) => r.year)} mode="group"
                 series={[{ label: "Inside UDA", color: SERIES[1], values: a.outward.map((r: any) => r.in) },
@@ -101,19 +88,46 @@ export default function Land() {
                 rows={a.outward.map((r: any) => [r.year, r.in, r.out, pctS(p1(r.out, r.in + r.out))])} />
             </Card>
 
-            <Card title="Conditional-use permits — rural land pressure" desc="What discretionary rural uses the county actually approves, by case count."
-              foot="Utility-scale solar is a big-footprint use (6 cases over ~100 parcels), not the most frequent — CUPs are led by commercial, telecom & events.">
+            <Card title="Realized homes vs. the long-range plan" desc="Where new homes fell relative to the plan's designated use."
+              foot={`${a.conformance.residential.on_employment_land} homes were built on land the plan reserves for business or industry; ~36% built outside the mapped growth area entirely.`}>
+              <HBar items={planItems} />
+              <MiniTable cols={["Plan designation", "New homes"]} rows={planItems.map((i) => [i.label, fmtI(i.value)])} />
+            </Card>
+
+            <Card title="Fire-service load from new homes" desc="New dwellings falling in each fire company's first-due area."
+              foot="Growth is lopsided. The Stephens City company absorbs the most, a demand the flat county budget doesn't reflect.">
+              <HBar items={fireItems} />
+              <MiniTable cols={["Fire company", "New homes"]} rows={fireItems.map((i: any) => [i.label, fmtI(i.value)])} />
+            </Card>
+          </div>
+        </section>
+
+        <section className="blk">
+          <h2>What's protected, and what's owed</h2>
+          <div className="sub">The land held back from development, the roads the county still owes new development, and where new homes end up.</div>
+          <div className="grid g-2">
+            <Card title="Land locked from development" desc="Protected acreage, and the dormant growth-management tool.">
+              <MiniTable open cols={["Program", "Amount", "Detail"]} rows={[
+                ["Conservation easements", fmtAc(a.protected.conservation_easement_acres), `${a.protected.conservation_easements} easements`],
+                ["Agricultural districts", fmtAc(a.protected.ag_district_acres), `${a.protected.ag_district_parcels} parcels`],
+                ["TDR rights available", fmtI(tdr.rights_available), `${fmtAc(tdr.eligible_acres)} eligible`],
+                ["TDR rights transferred", fmtI(tdr.rights_transferred), `${Math.round(tdr.rights_transferred / tdr.rights_available * 100)}% used, dormant`]]} />
+            </Card>
+
+            <Card title="Roads the county owes new development & the I-81 corridor" desc="Planned-but-unbuilt road network, and the interstate commercial overlay.">
+              <MiniTable open cols={["Road plan status", "Miles"]} rows={Object.entries(ms).map(([k, v]: any) => [k, v])} />
+              <div className="foot">
+                {fmtI(a.roads.homes_near_planned)} new homes sit within ¼-mile of a planned corridor ({a.roads.planned_miles} mi planned). The I-81 overlay ({a.interstate.overlay_parcels} parcels) is C/I-only: {a.interstate.ci_permits_in_overlay} C/I permits ({fmtM(a.interstate.ci_value_in_overlay)}), {a.interstate.homes_in_overlay} homes.
+              </div>
+            </Card>
+
+            <Card title="Conditional-use permits: rural land pressure" desc="What discretionary rural uses the county approves, by case count."
+              foot="Utility-scale solar is a big-footprint use (6 cases over ~100 parcels), not the most frequent; CUPs are led by commercial, telecom & events.">
               <HBar items={cupItems} />
               <MiniTable cols={["Use category", "CUP cases"]} rows={cupItems.map((i: any) => [i.label, i.value])} />
             </Card>
 
-            <Card title="Fire-service load from new homes" desc="New dwellings falling in each fire company's first-due area."
-              foot="Growth is lopsided — the Stephens City company absorbs the most, a demand the flat county budget doesn't reflect.">
-              <HBar items={fireItems} />
-              <MiniTable cols={["Fire company", "New homes"]} rows={fireItems.map((i: any) => [i.label, fmtI(i.value)])} />
-            </Card>
-
-            <Card title="Town vs. unincorporated county" desc="Where new homes land — inside the two incorporated towns, or the county at large.">
+            <Card title="Town vs. unincorporated county" desc="Where new homes get built: inside the two incorporated towns, or the county at large.">
               <Stacked100 fmt="int" segs={[
                 { label: "Unincorporated county", value: a.towns.homes_unincorporated, color: SERIES[7] },
                 { label: "Incorporated towns", value: a.towns.homes_in_towns, color: SERIES[1] }]} />

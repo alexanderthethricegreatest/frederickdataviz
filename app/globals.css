@@ -22,9 +22,8 @@
   --border:light-dark(rgba(20,24,29,.14),rgba(238,241,238,.12));   /* hairline rules */
   --border-2:light-dark(rgba(20,24,29,.08),rgba(238,241,238,.07));
   --hair:light-dark(rgba(255,255,255,.6),rgba(255,255,255,.06));
-  /* cadastral grid lines (the atmosphere) */
-  --grid-fine:light-dark(rgba(20,24,29,.045),rgba(238,241,238,.045));
-  --grid-sec:light-dark(rgba(20,24,29,.09),rgba(238,241,238,.08));
+  /* faint top wash — clean depth without the old graph-paper grid */
+  --wash:light-dark(rgba(44,85,120,.05),rgba(143,182,218,.06));
   /* interactive chrome = quiet BLUEPRINT ink (links, focus, active nav, controls) */
   --accent:light-dark(#2c5578,#8fb6da);
   --accent-2:light-dark(#3a6a92,#a7c6e4);
@@ -94,19 +93,10 @@ body{
   -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
   overflow-x:hidden;
 }
-/* cadastral drafting grid — the atmosphere: fine survey squares + heavier section lines */
+/* a single, quiet wash of light at the top — depth without the old graph-paper grid */
 body::before{
-  content:"";position:fixed;inset:-10%;z-index:-1;pointer-events:none;
-  background-image:
-    linear-gradient(var(--grid-fine) 1px,transparent 1px),
-    linear-gradient(90deg,var(--grid-fine) 1px,transparent 1px),
-    linear-gradient(var(--grid-sec) 1px,transparent 1px),
-    linear-gradient(90deg,var(--grid-sec) 1px,transparent 1px);
-  background-size:26px 26px,26px 26px,130px 130px,130px 130px;
-  background-position:center;
-  transform:translate3d(0,var(--mesh-y,0px),0);   /* parallax hook (GSAP drives --mesh-y) */
-  -webkit-mask-image:radial-gradient(120% 120% at 50% 0%,#000 55%,transparent 100%);
-          mask-image:radial-gradient(120% 120% at 50% 0%,#000 55%,transparent 100%);
+  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:radial-gradient(120% 80% at 50% -10%,var(--wash),transparent 60%);
 }
 h1,h2,h3,h4{margin:0;font-family:var(--f-display);font-weight:680;letter-spacing:-.02em;line-height:1.12;color:var(--ink)}
 /* geometric display face for large numerals & the wordmark — the "tool-like" flair */
@@ -115,6 +105,11 @@ a{color:inherit;text-decoration:none}
 p{margin:0}
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:6px}
 ::selection{background:var(--accent-soft)}
+
+/* per-route mount fade (app/template.tsx). Opacity only — a transform here would
+   break sticky table headers; opacity resolves to 1 so no fixed-containing-block. */
+.pt{animation:pt-in .42s cubic-bezier(.2,.7,.2,1) both}
+@keyframes pt-in{from{opacity:0}to{opacity:1}}
 
 .wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 16px}
 @media(min-width:640px){.wrap{padding:0 24px}}
@@ -145,19 +140,28 @@ th,.minitbl th,.crumb,.tl-item .d,.rescount,.sorthint,.h3n,.bv-tally,.rec-date,.
   color:var(--stamp-ink);background:var(--stamp);box-shadow:var(--shadow-sm)}
 .iconbtn{width:40px;height:40px;flex:none;border:1px solid var(--border);background:var(--glass);
   -webkit-backdrop-filter:var(--blur);backdrop-filter:var(--blur);color:var(--ink-2);border-radius:var(--r-md);
-  cursor:pointer;display:grid;place-items:center;transition:color .15s,transform .15s}
-.iconbtn:hover{color:var(--ink);transform:translateY(-1px)}
+  cursor:pointer;display:grid;place-items:center;transition:color .15s,transform .15s,border-color .15s}
+.iconbtn:hover{color:var(--ink);transform:translateY(-1px);border-color:color-mix(in srgb,var(--ink) 22%,var(--border))}
+.iconbtn:active{transform:translateY(0) scale(.94)}
+.iconbtn svg{transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+.iconbtn:hover svg{transform:rotate(-18deg) scale(1.08)}
 
 /* nav: dropdown on mobile, inline on desktop */
 .nav{display:flex;align-items:center}
 .navtoggle{display:inline-flex;align-items:center;gap:7px;height:40px;padding:0 14px;border-radius:var(--r-md);
   border:1px solid var(--border);background:var(--glass);-webkit-backdrop-filter:var(--blur);backdrop-filter:var(--blur);
-  color:var(--ink);font:inherit;font-size:var(--fs-sm);font-weight:600;cursor:pointer}
+  color:var(--ink);font:inherit;font-size:var(--fs-sm);font-weight:600;cursor:pointer;
+  transition:border-color .15s,transform .15s}
+.navtoggle:hover{border-color:color-mix(in srgb,var(--ink) 22%,var(--border))}
+.navtoggle:active{transform:scale(.96)}
 .navlist{display:none}
-.navlist a{position:relative;padding:8px 13px;border-radius:var(--r-sm);font-size:var(--fs-sm);color:var(--ink-2);font-weight:540;white-space:nowrap;transition:background .15s,color .15s}
-.navlist a:hover{background:var(--accent-soft);color:var(--ink)}
+.navlist a{position:relative;padding:8px 13px;border-radius:var(--r-sm);font-size:var(--fs-sm);color:var(--ink-2);font-weight:540;white-space:nowrap;transition:color .18s}
+.navlist a::after{content:"";position:absolute;left:13px;right:13px;bottom:1px;height:2px;border-radius:2px;
+  background:var(--accent);transform:scaleX(0);transform-origin:center;transition:transform .24s cubic-bezier(.2,.7,.2,1)}
+.navlist a:hover{color:var(--ink)}
+.navlist a:hover::after{transform:scaleX(1)}
 .navlist a.on{color:var(--ink);font-weight:620}
-.navlist a.on::after{content:"";position:absolute;left:13px;right:13px;bottom:1px;height:2px;background:var(--crit)}
+.navlist a.on::after{transform:scaleX(1);background:var(--crit)}
 .navmenu{position:fixed;top:64px;right:12px;left:12px;display:flex;flex-direction:column;gap:2px;padding:8px;
   background:var(--glass-2);-webkit-backdrop-filter:var(--blur);backdrop-filter:var(--blur);
   border:1px solid var(--border);border-radius:var(--r);box-shadow:var(--shadow-lg);z-index:70;
@@ -254,10 +258,12 @@ section.blk{padding:28px 0}
 .tile{position:relative;overflow:hidden;background:var(--surface);border:1px solid var(--border);
   border-radius:var(--r);padding:16px 16px 15px;box-shadow:var(--shadow-sm);
   transition:transform .16s,box-shadow .16s,border-color .16s}
-.tile:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
-/* ledger rule across the top — plain hairline; red only flags a deficit/cost stat */
-.tile::after{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:transparent}
-.tile.crit::after{background:var(--crit)} .tile.good::after{background:var(--good)}
+.tile:hover{transform:translateY(-2px);box-shadow:var(--shadow);border-color:color-mix(in srgb,var(--accent) 30%,var(--border))}
+/* accent rule across the top — draws in on hover; crit/good keep it lit as a flag */
+.tile::after{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:var(--accent);
+  transform:scaleX(0);transform-origin:left;transition:transform .3s cubic-bezier(.2,.7,.2,1)}
+.tile:hover::after{transform:scaleX(1)}
+.tile.crit::after{background:var(--crit);transform:scaleX(1)} .tile.good::after{background:var(--good);transform:scaleX(1)}
 .tile .v{font-size:clamp(1.5rem,5vw,1.875rem);font-weight:640;letter-spacing:-.02em;line-height:1}
 .tile.crit .v{color:var(--crit)}
 .tile .k{color:var(--ink-2);font-size:var(--fs-sm);margin-top:8px;font-weight:560}
@@ -266,8 +272,12 @@ section.blk{padding:28px 0}
 /* ---------- buttons / controls ---------- */
 .btn{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border-radius:var(--r-md);
   font-weight:600;font-size:var(--fs-sm);border:1px solid var(--border);background:var(--surface);color:var(--ink);
-  cursor:pointer;transition:transform .15s,box-shadow .15s,border-color .15s}
+  cursor:pointer;transition:transform .16s cubic-bezier(.2,.7,.2,1),box-shadow .15s,border-color .15s}
 .btn:hover{transform:translateY(-1px);box-shadow:var(--shadow);border-color:color-mix(in srgb,var(--ink) 26%,var(--border))}
+.btn:active{transform:translateY(0) scale(.985)}
+/* trailing icon (e.g. the CTA arrow) glides forward on hover */
+.btn svg{transition:transform .2s cubic-bezier(.2,.7,.2,1)}
+.btn:hover svg{transform:translateX(3px)}
 /* stamped primary — flat ink block, the register of an official mark */
 .btn.primary{background:var(--stamp);border-color:transparent;color:var(--stamp-ink);box-shadow:var(--shadow-sm)}
 .btn.primary:hover{box-shadow:var(--shadow)}
@@ -275,11 +285,18 @@ section.blk{padding:28px 0}
 .seg{display:inline-flex;flex-wrap:wrap;border:1px solid var(--border);border-radius:var(--r-md);overflow:hidden;
   background:var(--glass);-webkit-backdrop-filter:var(--blur);backdrop-filter:var(--blur)}
 .seg button{border:0;background:transparent;color:var(--ink-2);font:inherit;font-size:var(--fs-sm);
-  min-height:40px;padding:0 13px;cursor:pointer;transition:background .14s,color .14s}
+  min-height:40px;padding:0 13px;cursor:pointer;transition:background .14s,color .14s,transform .12s}
 .seg button+button{border-left:1px solid var(--border-2)}
 .seg button:hover:not(:disabled){background:var(--accent-soft);color:var(--ink)}
+.seg button:active:not(:disabled){transform:scale(.95)}
 .seg button.on{background:var(--accent-strong);color:#fff}
 .seg button:disabled{opacity:.35;cursor:not-allowed}
+/* board switcher (votes): a labeled row that carries the .seg tablist */
+.boardswitch{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:4px 0 24px}
+.boardswitch-lab{font-family:var(--f-mono);font-size:var(--fs-xs);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.boardswitch .seg button{min-height:44px;padding:0 18px;font-weight:600}
+.seg-hint{font-family:var(--f-mono);font-weight:400;font-size:.86em;opacity:.72}
+@media(max-width:560px){.seg-hint{display:none}}
 .chk{display:inline-flex;align-items:center;gap:7px;font-size:var(--fs-sm);color:var(--ink-2);cursor:pointer;min-height:40px}
 .chk input{accent-color:var(--accent);width:16px;height:16px}
 
@@ -347,12 +364,17 @@ details.data>summary:hover{background:var(--accent-soft);color:var(--accent)}
 .searchbox{flex:1 1 240px;position:relative;display:flex;align-items:center}
 .searchbox svg{position:absolute;left:12px;opacity:.5;pointer-events:none}
 .searchbox input{width:100%;min-height:44px;padding:0 14px 0 38px;border:1px solid var(--border);border-radius:var(--r-md);
-  background:var(--glass);-webkit-backdrop-filter:var(--blur);backdrop-filter:var(--blur);color:var(--ink);font:inherit;font-size:var(--fs-md)}
-.searchbox input:focus{outline:2px solid var(--accent);outline-offset:-1px}
+  background:var(--glass);-webkit-backdrop-filter:var(--blur);backdrop-filter:var(--blur);color:var(--ink);font:inherit;font-size:var(--fs-md);
+  transition:border-color .16s,box-shadow .16s}
+.searchbox input:hover{border-color:color-mix(in srgb,var(--ink) 20%,var(--border))}
+.searchbox input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.searchbox:focus-within svg{opacity:.9;color:var(--accent)}
 .chips{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:12px}
 .chip{font-size:var(--fs-xs);padding:7px 13px;border-radius:var(--r-pill);border:1px solid var(--border);
-  background:var(--glass);color:var(--ink-2);cursor:pointer;user-select:none;transition:background .14s,color .14s,border-color .14s}
-.chip:hover{color:var(--ink)} .chip.on{background:var(--accent-strong);border-color:transparent;color:#fff}
+  background:var(--glass);color:var(--ink-2);cursor:pointer;user-select:none;
+  transition:background .14s,color .14s,border-color .14s,transform .12s}
+.chip:hover{color:var(--ink);border-color:color-mix(in srgb,var(--ink) 20%,var(--border))}
+.chip:active{transform:scale(.94)} .chip.on{background:var(--accent-strong);border-color:transparent;color:#fff}
 .rescount{color:var(--muted);font-size:var(--fs-sm);margin:2px 0 10px}
 .sorthint{color:var(--muted)}
 /* active filter pills */
@@ -387,7 +409,8 @@ th{position:sticky;top:0;z-index:3;background:var(--surface);color:var(--ink-2);
 th:hover{color:var(--ink)}
 td.num{text-align:right;font-variant-numeric:tabular-nums}
 td.wide{white-space:normal;min-width:220px;max-width:360px}
-tbody tr{cursor:pointer;transition:background .12s} tbody tr:hover{background:var(--accent-soft)}
+tbody tr{cursor:pointer;transition:background .12s,box-shadow .12s}
+tbody tr:hover{background:var(--accent-soft);box-shadow:inset 3px 0 0 var(--accent)}
 
 /* ---------- pills / status / category ---------- */
 .pill{display:inline-block;font-size:var(--fs-xs);padding:4px 10px;border-radius:var(--r-pill);font-weight:620}
@@ -474,6 +497,11 @@ a.navcard .mini span{font-size:var(--fs-xs);color:var(--muted)}
 /* ---------- map ---------- */
 .mapctl{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
 .mapcount{margin-left:auto;color:var(--muted);font-size:var(--fs-sm);font-variant-numeric:tabular-nums}
+.ovbtn{display:inline-flex;align-items:center;gap:6px;font-size:var(--fs-sm);color:var(--ink-2);cursor:pointer;
+  padding:6px 12px;min-height:32px;background:var(--surface-2);border:1px solid var(--border);border-radius:var(--r-md)}
+.ovbtn:hover{border-color:var(--accent);color:var(--ink)}
+.ovrow{display:flex;align-items:center;gap:9px;font-size:var(--fs-sm);color:var(--ink-2);cursor:pointer;padding:5px 4px;border-radius:6px}
+.ovrow:hover{background:var(--accent-soft);color:var(--ink)}
 .timectl{display:flex;align-items:center;gap:12px;margin-top:14px;padding:12px 14px;flex-wrap:wrap;
   background:var(--glass-2);border:1px solid var(--border);border-radius:var(--r-md);
   -webkit-backdrop-filter:var(--blur);backdrop-filter:var(--blur)}

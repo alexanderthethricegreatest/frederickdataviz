@@ -8,11 +8,16 @@
     "start": "next start"
   },
   "dependencies": {
+    "@deck.gl/aggregation-layers": "^9.3.6",
+    "@deck.gl/extensions": "^9.3.6",
+    "@deck.gl/mapbox": "^9.3.6",
     "@gsap/react": "^2.1.2",
     "@radix-ui/themes": "^3.3.0",
     "d3": "^7.9.0",
+    "deck.gl": "^9.3.6",
     "gsap": "^3.15.0",
     "lucide-react": "^0.469.0",
+    "maplibre-gl": "^4.7.1",
     "next": "15.1.6",
     "react": "19.0.0",
     "react-dom": "19.0.0"

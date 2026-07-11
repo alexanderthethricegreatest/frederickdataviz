@@ -116,7 +116,7 @@ export default async function AppDetail({ params }: { params: Promise<{ id: stri
           {/* LEFT: pipeline + related + docs */}
           <div>
             <div className="card">
-              <h3>Pipeline</h3>
+              <h3>Approval timeline</h3>
               <div className="cdesc">The stages this application moved through.</div>
               {tl.length ? (
                 <div className="timeline">
@@ -134,7 +134,7 @@ export default async function AppDetail({ params }: { params: Promise<{ id: stri
 
             <VotesCard
               title="Planning Commission recommendations"
-              subtitle={`Recorded Commission ${pcVotes.length > 1 ? "actions" : "action"} on this case, from the meeting minutes — the Commission recommends before the Board decides.`}
+              subtitle={`Recorded Commission ${pcVotes.length > 1 ? "actions" : "action"} on this case, from the meeting minutes. The Commission recommends before the Board decides.`}
               votes={pcVotes}
             />
 
@@ -146,7 +146,7 @@ export default async function AppDetail({ params }: { params: Promise<{ id: stri
 
             <div className="card mt-sec">
               <h3><Layers size={15} className="ico-mid" /> Related cases on the same land</h3>
-              <div className="cdesc">Other applications sharing parcels — usually stages of one project (rezoning → plan → subdivision → site plan).</div>
+              <div className="cdesc">Other applications sharing parcels, usually stages of one project (rezoning → plan → subdivision → site plan).</div>
               {related.length ? related.map((r) => (
                 <Link key={r.id} href={`/applications/${slugify(r.id)}`} className="related-item">
                   <i style={{ width: 9, height: 9, borderRadius: 2, background: catColor(r.category), flex: "none" }} />
@@ -195,7 +195,7 @@ export default async function AppDetail({ params }: { params: Promise<{ id: stri
                   {lc.proffers.per_sqft ? (<><dt>Per sq ft</dt><dd>{lc.proffers.per_sqft}</dd></>) : null}
                   <dt>Source</dt><dd>{lc.proffers.source}</dd>
                 </dl>
-                {lc.proffers.needs_review && <div className="foot">OCR-sourced — figures need manual verification.</div>}
+                {lc.proffers.needs_review && <div className="foot">OCR-sourced. Figures need manual verification.</div>}
               </div>
             )}
 

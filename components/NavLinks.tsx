@@ -8,7 +8,7 @@ const LINKS: [string, string][] = [
   ["/", "Overview"],
   ["/map", "Map"],
   ["/fiscal", "Fiscal"],
-  ["/land", "Where it lands"],
+  ["/land", "Where it gets built"],
   ["/builders", "Who's building"],
   ["/applications", "Applications"],
   ["/votes", "How they voted"],

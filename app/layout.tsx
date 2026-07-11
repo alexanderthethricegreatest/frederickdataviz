@@ -30,7 +30,7 @@ const mono = IBM_Plex_Mono({
 
 export const metadata: Metadata = {
   title: "Frederick County Growth Atlas",
-  description: "An independent planning atlas for Frederick County, VA — every land-use application, its full pipeline, and what growth costs.",
+  description: "An independent planning atlas for Frederick County, VA: every land-use application, how it got approved, and what growth costs.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

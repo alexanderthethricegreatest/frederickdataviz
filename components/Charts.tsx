@@ -191,7 +191,13 @@ export function HBar({ items, fmt }:
   const vfmt = F(fmt);
   const [tip, show, hide] = useTip();
   const narrow = useNarrow();
-  const rowH = 30, W = narrow ? 392 : 720, m = narrow ? { t: 6, r: 60, l: 96, b: 6 } : { t: 6, r: 128, l: 168, b: 6 };
+  const rowH = 30, W = narrow ? 392 : 720;
+  // Size the left margin to the longest label so mono ticks never clip off the edge.
+  // Labels render in var(--f-mono) at 11px (viewBox units) → ~6.6 units/char, plus the
+  // 10-unit gap before the bar; cap so the bar region stays usable.
+  const longest = Math.max(0, ...items.map((d) => d.label.length));
+  const labelW = Math.min(Math.ceil(longest * 6.6) + 12, Math.round(W * 0.5));
+  const m = narrow ? { t: 6, r: 60, l: Math.max(96, labelW), b: 6 } : { t: 6, r: 128, l: Math.max(168, labelW), b: 6 };
   const H = m.t + m.b + items.length * rowH;
   const x = scaleLinear().domain([0, max(items, (d) => d.value) || 1]).nice().range([m.l, W - m.r]);
   const [wrapRef, inView] = useReveal<HTMLDivElement>();

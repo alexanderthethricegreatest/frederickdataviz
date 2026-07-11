@@ -2,7 +2,7 @@ import { atlas, SERIES, fmtI, fmtM, pctS, fmtAc } from "@/lib/data";
 import { Bars, HBar, Stacked100, Legend } from "@/components/Charts";
 import { PageHead, Card, MiniTable } from "@/components/Kit";
 
-export const metadata = { title: "The fiscal axis · Growth Atlas" };
+export const metadata = { title: "The money problem · Growth Atlas" };
 const RES = SERIES[0], CI = SERIES[7], RUR = SERIES[3], MUT = "var(--muted)";
 
 export default function Fiscal() {
@@ -23,7 +23,7 @@ export default function Fiscal() {
 
   return (
     <>
-      <PageHead eyebrow="The fiscal axis" title="Residential costs. Commercial pays. The base is too thin."
+      <PageHead eyebrow="The money problem" title="Residential costs. Commercial pays. The base is too thin."
         stats={[
           { v: pctS(ci.pct_of_total), l: "C/I share of tax base", cls: "crit" },
           { v: fmtM(a.commerce.ci_investment), l: "C/I construction, 10 yr" },
@@ -31,33 +31,25 @@ export default function Fiscal() {
           { v: fmtI(sup.supply_acres.residential) + " ac", l: "Residential-zoned land" },
         ]}>
         Frederick County’s residential growth happens by-right and carries a recurring net cost to serve.
-        Commercial and industrial land is the counterweight that pays — but it is under a fifth of the
+        Commercial and industrial land is the counterweight that pays, but it is under a fifth of the
         assessed base, and roughly 40% of what is zoned for it sits unbuilt.
       </PageHead>
 
       <main className="wrap">
         <section className="blk">
+          <h2>The tax base</h2>
+          <div className="sub">What the county taxes: its composition, when it was built, and where the value is concentrated.</div>
           <div className="grid g-2">
             <Card title="Tax base composition" desc="Share of total assessed value by land-use class."
-              foot="Commercial/Industrial is under a fifth of the base — the structural core of the deficit thesis.">
+              foot="Commercial/Industrial is under a fifth of the base, the root of the deficit.">
               <Legend series={segs} />
               <Stacked100 segs={segs} fmt="money" />
               <MiniTable cols={["Class", "Assessed value", "Share", "Parcels", "Acres"]}
                 rows={snap.map((x: any) => [tbMap[x.class] || x.class, fmtM(x.total_value), pctS(x.pct_of_total), fmtI(x.parcels), fmtI(x.acres)])} />
             </Card>
 
-            <Card title="Rezoning approvals by class" desc="Acres newly zoned per year. Residential is ~nil — it develops by-right."
-              foot="Today's rezoning docket creates C/I land; residential needs no rezoning, so it barely appears here.">
-              <Legend series={[{ label: "Residential", color: RES }, { label: "Commercial/Industrial", color: CI }]} />
-              <Bars cats={zy.map((r: any) => r.year)} mode="group" fmt="acres"
-                series={[{ label: "Residential", color: RES, values: zy.map((r: any) => r.residential) },
-                         { label: "Commercial/Industrial", color: CI, values: zy.map((r: any) => r.commercial_industrial) }]} />
-              <MiniTable cols={["Year", "Residential ac", "C/I ac"]}
-                rows={zy.map((r: any) => [r.year, fmtI(r.residential), fmtI(r.commercial_industrial)])} />
-            </Card>
-
             <Card title="Assessed improvement value by era built" desc="When today's taxable buildings were added, by land class."
-              foot="The base has grown steadily more residential — improvements outpace C/I ~3–4:1 each decade.">
+              foot="The base has grown steadily more residential; improvements outpace C/I ~3–4:1 each decade.">
               <Legend series={[{ label: "Residential", color: RES }, { label: "Commercial/Industrial", color: CI }, { label: "Rural/Ag", color: RUR }]} />
               <Bars cats={dec.map((r: any) => r.decade + "s")} mode="stack" fmt="money"
                 series={[{ label: "Residential", color: RES, values: dec.map((r: any) => r.residential || 0) },
@@ -67,7 +59,33 @@ export default function Fiscal() {
                 rows={dec.map((r: any) => [r.decade + "s", fmtM(r.residential || 0), fmtM(r.commercial_industrial || 0), fmtM(r.rural_ag || 0)])} />
             </Card>
 
-            <Card title="C/I building permits per year" desc="Realized commercial & industrial construction (institutional shown apart — it's tax-exempt)."
+            <Card title="Assessed value by district" desc="Land value vs. building (improvement) value across the eight magisterial districts." wide
+              foot="Improvement value dwarfs land value everywhere. The base is what's built on the land, and it's overwhelmingly residential.">
+              <Legend series={[{ label: "Land value", color: RUR }, { label: "Improvement value", color: RES }]} />
+              <Bars cats={valRows.map((v: any) => v.district)} mode="stack" fmt="money"
+                series={[{ label: "Land value", color: RUR, values: valRows.map((v: any) => v.land_value) },
+                         { label: "Improvement value", color: RES, values: valRows.map((v: any) => v.improvement) }]} />
+              <MiniTable cols={["District", "Land", "Improvement", "Total", "Parcels"]}
+                rows={valRows.map((v: any) => [v.district, fmtM(v.land_value), fmtM(v.improvement), fmtM(v.total_value), fmtI(v.parcels)])} />
+            </Card>
+          </div>
+        </section>
+
+        <section className="blk">
+          <h2>Commercial supply & what gets built</h2>
+          <div className="sub">The counterweight that pays: how much C/I land is created, how much is realized, and how much sits idle.</div>
+          <div className="grid g-2">
+            <Card title="Rezoning approvals by class" desc="Acres newly zoned per year. Residential is ~nil; it develops by-right."
+              foot="Today's rezoning docket creates C/I land; residential needs no rezoning, so it barely appears here.">
+              <Legend series={[{ label: "Residential", color: RES }, { label: "Commercial/Industrial", color: CI }]} />
+              <Bars cats={zy.map((r: any) => r.year)} mode="group" fmt="acres"
+                series={[{ label: "Residential", color: RES, values: zy.map((r: any) => r.residential) },
+                         { label: "Commercial/Industrial", color: CI, values: zy.map((r: any) => r.commercial_industrial) }]} />
+              <MiniTable cols={["Year", "Residential ac", "C/I ac"]}
+                rows={zy.map((r: any) => [r.year, fmtI(r.residential), fmtI(r.commercial_industrial)])} />
+            </Card>
+
+            <Card title="C/I building permits per year" desc="Realized commercial & industrial construction (institutional shown apart because it's tax-exempt)."
               foot={`${fmtM(a.commerce.ci_investment)} of commercial + industrial construction value across the decade.`}>
               <Legend series={[{ label: "Commercial", color: RES }, { label: "Industrial", color: CI }, { label: "Institutional", color: MUT }]} />
               <Bars cats={cby.map((r: any) => r.year)} mode="stack"
@@ -78,7 +96,7 @@ export default function Fiscal() {
                 rows={cby.map((r: any) => [r.year, r.commercial, r.industrial, r.institutional, fmtM(r.commercial_val + r.industrial_val)])} />
             </Card>
 
-            <Card title="Zoned-land inventory" desc="Standing supply vs what is actually built.">
+            <Card title="Zoned-land inventory" desc="Standing supply vs what is built.">
               <Stacked100 fmt="acres" segs={[
                 { label: "Residential-zoned", value: sup.supply_acres.residential, color: RES },
                 { label: "C/I-zoned", value: sup.supply_acres.commercial_industrial, color: CI },
@@ -90,31 +108,27 @@ export default function Fiscal() {
                 ["Vacant C/I parcels", fmtI(sup.vacant_ci_parcels)]]} />
             </Card>
 
-            <Card title="Proffers — do they pay for growth?" desc="Where the 697 mapped proffer points attach, and how rarely housing pays cash."
-              foot={`Only ${a.proffers.residential_cash_cases.length} rezonings flagged residential cash — all OCR-sourced, pending manual verification.`}>
+            <Card title="Where C/I gets built" desc="Parcel-matched commercial & industrial permits, by the zoning they were built on.">
+              <HBar items={zoneItems} />
+              <MiniTable cols={["Zone", "C/I permits"]} rows={zoneItems.map((z: any) => [z.label, z.value])} />
+            </Card>
+          </div>
+        </section>
+
+        <section className="blk">
+          <h2>Does growth pay its way?</h2>
+          <div className="sub">Proffers are the one upfront payment developers are asked to make, and they attach to commercial land, not housing.</div>
+          <div className="grid g-2">
+            <Card wide title="Proffers: do they pay for growth?" desc="Where the 697 mapped proffer points attach, and how rarely housing pays cash."
+              foot={`Only ${a.proffers.residential_cash_cases.length} rezonings flagged residential cash, all OCR-sourced, pending manual verification.`}>
               <MiniTable open cols={["Proffers attach to…", "Points"]} rows={[
                 ["Commercial / Industrial land", fmtI(a.proffers.on_ci_land)],
                 ["Residential land", fmtI(a.proffers.on_residential_land)],
                 ["Rural / Ag", fmtI(a.proffers.by_zone_class.rural_ag || 0)],
                 ["Unmatched parcel", fmtI(a.proffers.by_zone_class.unmatched || 0)]]} />
               <div className="foot" style={{ borderTop: "none", paddingTop: 6 }}>
-                {a.proffers.total_points} points across {a.proffers.rezonings_with_proffers} rezonings — proffers follow commerce ~{(a.proffers.on_ci_land / Math.max(a.proffers.on_residential_land, 1)).toFixed(1)}× more than housing.
+                {a.proffers.total_points} points across {a.proffers.rezonings_with_proffers} rezonings; proffers attach to commercial land ~{(a.proffers.on_ci_land / Math.max(a.proffers.on_residential_land, 1)).toFixed(1)}× more often than to housing.
               </div>
-            </Card>
-
-            <Card title="Assessed value by district" desc="Land value vs. building (improvement) value across the eight magisterial districts." wide
-              foot="Improvement value dwarfs land value everywhere — the base is what's built on the land, and it's overwhelmingly residential.">
-              <Legend series={[{ label: "Land value", color: RUR }, { label: "Improvement value", color: RES }]} />
-              <Bars cats={valRows.map((v: any) => v.district)} mode="stack" fmt="money"
-                series={[{ label: "Land value", color: RUR, values: valRows.map((v: any) => v.land_value) },
-                         { label: "Improvement value", color: RES, values: valRows.map((v: any) => v.improvement) }]} />
-              <MiniTable cols={["District", "Land", "Improvement", "Total", "Parcels"]}
-                rows={valRows.map((v: any) => [v.district, fmtM(v.land_value), fmtM(v.improvement), fmtM(v.total_value), fmtI(v.parcels)])} />
-            </Card>
-
-            <Card title="Where C/I actually gets built" desc="Parcel-matched commercial & industrial permits, by the zoning they landed on.">
-              <HBar items={zoneItems} />
-              <MiniTable cols={["Zone", "C/I permits"]} rows={zoneItems.map((z: any) => [z.label, z.value])} />
             </Card>
           </div>
         </section>

@@ -7,6 +7,7 @@ import { DropdownMenu } from "@radix-ui/themes";
 const LINKS: [string, string][] = [
   ["/", "Overview"],
   ["/map", "Map"],
+  ["/valley-link", "Valley Link"],
   ["/fiscal", "Fiscal"],
   ["/land", "Where it gets built"],
   ["/builders", "Who's building"],

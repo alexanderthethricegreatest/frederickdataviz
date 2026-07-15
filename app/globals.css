@@ -523,6 +523,121 @@ svg circle.pop{animation:popin .55s cubic-bezier(.2,1.3,.5,1) both;transform-ori
     transition-duration:.001ms!important;scroll-behavior:auto!important}
 }
 
+/* ---------- Valley Link GIS viewer (left layers panel + map) ---------- */
+.gis{display:flex;border:1px solid var(--border);border-radius:var(--r);overflow:hidden;
+  background:var(--surface);height:clamp(480px,calc(100dvh - 210px),880px)}
+.gis-panel{flex:0 0 268px;display:flex;flex-direction:column;background:var(--surface-2);
+  border-right:1px solid var(--border);overflow-y:auto}
+.gis-map{flex:1 1 auto;position:relative;min-width:0}   /* min-width:0 so the map can shrink */
+.gis-group{padding:11px 14px;border-bottom:1px solid var(--border-2)}
+.gis-group h4{font-size:var(--fs-xs);text-transform:uppercase;letter-spacing:.06em;
+  color:var(--muted);margin:0 0 7px;font-weight:640}
+.gis-row{display:flex;align-items:center;gap:9px;font-size:var(--fs-sm);color:var(--ink-2);
+  cursor:pointer;padding:5px 6px;border-radius:6px;user-select:none}
+.gis-row:hover{background:var(--accent-soft);color:var(--ink)}
+.gis-row.off{opacity:.5}
+.gis-row .sw{width:12px;height:12px;border-radius:3px;flex:none;border:1px solid var(--border)}
+.gis-row .sw-line{width:15px;height:3px;border-radius:2px;flex:none}
+.gis-row .sw-dot{width:11px;height:11px;border-radius:50%;flex:none;border:1.5px solid #fff;box-shadow:0 0 0 1px var(--border)}
+.gis-row .ct{margin-left:auto;font-size:var(--fs-xs);color:var(--muted);font-variant-numeric:tabular-nums}
+.gis-tiers{display:flex;flex-wrap:wrap;gap:5px 12px;padding:4px 6px 2px;font-size:var(--fs-xs);color:var(--ink-2)}
+.gis-tiers span{display:inline-flex;align-items:center;gap:6px}
+.gis-tiers i{width:10px;height:10px;border-radius:3px;flex:none}
+.gis-info{margin-top:auto;padding:12px 14px;border-top:1px solid var(--border);background:var(--surface)}
+.gis-info .hd{display:flex;align-items:baseline;gap:8px}
+.gis-info .hd b{font-weight:660;font-size:var(--fs-sm)}
+.gis-info .hd .x{margin-left:auto;color:var(--muted);cursor:pointer;font-size:var(--fs-md);line-height:1}
+.gis-info .tag{font-size:var(--fs-xs);color:var(--muted)}
+.gis-info dl{display:grid;grid-template-columns:auto 1fr;gap:3px 10px;margin:8px 0 0}
+.gis-info dt{color:var(--muted);font-size:var(--fs-xs)}
+.gis-info dd{margin:0;text-align:right;font-size:var(--fs-xs);font-variant-numeric:tabular-nums;color:var(--ink)}
+.gis-info .empty{color:var(--muted);font-size:var(--fs-xs);line-height:1.5}
+@media (max-width:760px){
+  .gis{flex-direction:column;height:auto}
+  .gis-panel{flex:none;max-height:230px;border-right:none;border-bottom:1px solid var(--border)}
+  .gis-map{height:62vh}
+}
+
+/* ---------- Valley Link scorecard ---------- */
+.scorecard{margin-top:22px}
+.scorecard h2{font-size:var(--fs-xl);font-weight:640}
+.scorecard .sub{color:var(--muted);font-size:var(--fs-sm);margin:5px 0 16px;max-width:70ch}
+.sc-tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-bottom:16px}
+.sc-tiles .t{border:1px solid var(--border);border-radius:var(--r-md);padding:12px 14px;background:var(--surface)}
+.sc-tiles .t .v{font-size:var(--fs-xl);font-weight:660;font-variant-numeric:tabular-nums;font-family:var(--f-display)}
+.sc-tiles .t .v.crit{color:var(--crit)}
+.sc-tiles .t .l{color:var(--muted);font-size:var(--fs-xs);margin-top:2px}
+/* Radix Select/Popover/menu content portals to <body>, outside .radix-themes, so it loses the
+   panel-background variable and renders transparent. Force a solid, theme-aware surface. */
+.rt-PopperContent, .rt-BaseMenuContent, .rt-SelectContent, .rt-PopoverContent, .rt-DropdownMenuContent {
+  background-color: var(--surface) !important;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+/* collapsible analytical sections */
+.sc-collapse > summary { list-style: none; cursor: pointer; display: flex; align-items: baseline; gap: 10px; }
+.sc-collapse > summary::-webkit-details-marker { display: none; }
+.sc-collapse > summary::before { content: "▾"; color: var(--muted); font-size: .8em; transition: transform .15s; align-self: center; }
+.sc-collapse:not([open]) > summary::before { transform: rotate(-90deg); }
+.sc-collapse > summary h2 { margin: 0; }
+.sc-collapse > summary:hover h2 { color: var(--accent); }
+
+/* who-pays-vs-who-benefits capstone table */
+.whopays{margin:2px 0 4px;overflow-x:auto}
+.whopays table{width:100%;border-collapse:collapse;font-size:var(--fs-sm);min-width:520px}
+.whopays th{text-align:left;color:var(--muted);font-size:var(--fs-xs);text-transform:uppercase;
+  letter-spacing:.05em;font-weight:640;padding:6px 10px;border-bottom:1px solid var(--border)}
+.whopays td{padding:8px 10px;border-bottom:1px solid var(--border-2);vertical-align:top;line-height:1.4}
+.whopays td:first-child{font-weight:600;color:var(--ink-2);white-space:nowrap}
+.whopays td:nth-child(2){font-variant-numeric:tabular-nums}
+.whopays tr.harm td{background:light-dark(rgba(207,58,36,.06),rgba(242,96,74,.08))}
+.whopays tr.harm td:first-child{color:var(--crit)}
+.whopays tr.gain td:first-child{color:var(--good)}
+
+/* public-vs-private burden contrast */
+.sc-contrast{display:grid;grid-template-columns:1fr auto 1fr;gap:14px;align-items:stretch;margin:6px 0 16px}
+@media (max-width:620px){.sc-contrast{grid-template-columns:1fr}.sc-contrast .vs{display:none}}
+.sc-contrast .side{border:1px solid var(--border);border-radius:var(--r-md);padding:14px 16px;background:var(--surface)}
+.sc-contrast .side.private{border-color:var(--crit);background:light-dark(rgba(207,58,36,.05),rgba(242,96,74,.07))}
+.sc-contrast .tag{font-size:var(--fs-xs);color:var(--muted);text-transform:uppercase;letter-spacing:.05em;font-weight:640}
+.sc-contrast .big{font-size:var(--fs-3xl);font-weight:680;font-family:var(--f-display);font-variant-numeric:tabular-nums;margin:3px 0 2px;line-height:1.1}
+.sc-contrast .side.private .big{color:var(--crit)}
+.sc-contrast .sub{font-size:var(--fs-xs);color:var(--muted);line-height:1.4}
+.sc-contrast .vs{align-self:center;color:var(--muted);font-size:var(--fs-md);font-weight:600}
+.est-badge{font-size:var(--fs-xs);font-weight:500;color:var(--warn);border:1px solid var(--warn);
+  border-radius:var(--r-pill);padding:1px 9px;vertical-align:middle;margin-left:8px;letter-spacing:.02em}
+.sc-assume{margin-top:14px;font-size:var(--fs-sm)}
+.sc-assume summary{cursor:pointer;color:var(--accent);font-weight:600;font-size:var(--fs-xs);
+  text-transform:uppercase;letter-spacing:.05em}
+.sc-assume ul{margin:9px 0 0;padding-left:18px;color:var(--muted);font-size:var(--fs-xs);line-height:1.55}
+.sc-assume li{margin-bottom:5px}
+.sc-lead{border-left:3px solid var(--crit);background:var(--wash);padding:11px 15px;border-radius:0 var(--r-sm) var(--r-sm) 0;
+  font-size:var(--fs-sm);line-height:1.55;color:var(--ink-2);margin:0 0 18px;max-width:88ch}
+.sc-lead b{color:var(--ink);font-weight:640}
+.sc-cols{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+@media (max-width:680px){.sc-cols{grid-template-columns:1fr}}
+.sc-cols h4{font-size:var(--fs-sm);font-weight:640;margin:0 0 10px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+.sc-row{display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid var(--border-2);font-size:var(--fs-sm)}
+.sc-row:last-child{border-bottom:none}
+.sc-row .lab{flex:1;color:var(--ink-2)}
+.sc-row .lab .hint{display:block;color:var(--muted);font-size:var(--fs-xs);margin-top:1px;line-height:1.35}
+.sc-row .num{font-variant-numeric:tabular-nums;font-weight:640;color:var(--ink)}
+.sc-row .num .u{color:var(--muted);font-weight:400;font-size:var(--fs-xs);margin-left:3px}
+.sc-meter{flex:none;width:104px;height:7px;border-radius:4px;background:var(--grid);overflow:hidden}
+.sc-meter i{display:block;height:100%;border-radius:4px}
+/* distribution bars (class breakdown of the ROW footprint) */
+.sc-classkey{display:flex;flex-wrap:wrap;gap:5px 12px;margin-bottom:12px;font-size:var(--fs-xs);color:var(--muted)}
+.sc-classkey span{display:inline-flex;align-items:center;gap:5px}
+.sc-classkey i{width:10px;height:10px;border-radius:2px;flex:none}
+.sc-dist{margin:0 0 13px}
+.sc-dist-head{display:flex;align-items:baseline;gap:8px;font-size:var(--fs-sm);margin-bottom:4px}
+.sc-dist-head .nm{font-weight:600;color:var(--ink-2)}
+.sc-dist-head .st{margin-left:auto;font-size:var(--fs-xs);color:var(--muted);font-variant-numeric:tabular-nums}
+.sc-dist-head .st b{color:var(--crit);font-weight:640}
+.sc-bar{display:flex;height:15px;border-radius:4px;overflow:hidden;background:var(--grid)}
+.sc-bar i{display:block;height:100%}
+
 /* ---------- footer ---------- */
 .footer{color:var(--muted);font-size:var(--fs-xs);padding:36px 0 56px;text-align:center;
   border-top:1px solid var(--border);margin-top:24px;line-height:1.6}

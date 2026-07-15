@@ -21,7 +21,7 @@ export default function ThemeProvider({ children }: { children: React.ReactNode 
   return (
     <Ctx.Provider value={{ theme, toggle }}>
       <Theme appearance={theme} accentColor="indigo" grayColor="slate" radius="large"
-        panelBackground="translucent" scaling="100%" style={{ minHeight: "100dvh", background: "transparent" }}>
+        panelBackground="solid" scaling="100%" style={{ minHeight: "100dvh", background: "transparent" }}>
         {children}
       </Theme>
     </Ctx.Provider>
